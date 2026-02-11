@@ -1,6 +1,9 @@
 import { useState, useCallback, useMemo } from 'react';
 import { ReactFlowProvider } from '@xyflow/react';
+import { useImmerReducer } from 'use-immer';
 import { sampleTopology, type Container } from './data/sampleTopology';
+import { topologyReducer, type TopologyState } from './store/topologyReducer';
+import { TopologyDispatchContext } from './store/TopologyContext';
 import { GeographicView } from './components/GeographicView';
 import { SubnetView } from './components/SubnetView';
 import { LanView } from './components/LanView';
@@ -16,7 +19,12 @@ interface NavigationState {
   subnetId: string | null;
 }
 
+const initialState: TopologyState = { topology: sampleTopology };
+
 function App() {
+  const [state, dispatch] = useImmerReducer(topologyReducer, initialState);
+  const { topology } = state;
+
   const [nav, setNav] = useState<NavigationState>({
     scale: 'geographic',
     siteId: null,
@@ -25,8 +33,6 @@ function App() {
 
   const [selectedContainer, setSelectedContainer] = useState<Container | null>(null);
   const [terminalContainer, setTerminalContainer] = useState<Container | null>(null);
-
-  const topology = sampleTopology;
 
   // Navigation handlers
   const goToGeographic = useCallback(() => {
@@ -47,15 +53,33 @@ function App() {
     []
   );
 
+  // Navigation guards: derive effective nav (corrects if entities were deleted)
+  const effectiveNav = useMemo<NavigationState>(() => {
+    if (nav.siteId && !topology.sites.find(s => s.id === nav.siteId)) {
+      return { scale: 'geographic', siteId: null, subnetId: null };
+    }
+    const site = topology.sites.find(s => s.id === nav.siteId);
+    if (nav.subnetId && site && !site.subnets.find(s => s.id === nav.subnetId)) {
+      return { ...nav, scale: 'subnet', subnetId: null };
+    }
+    return nav;
+  }, [nav, topology.sites]);
+
   // Get current data for the active view
   const currentSite = useMemo(
-    () => topology.sites.find((s) => s.id === nav.siteId) ?? null,
-    [topology.sites, nav.siteId]
+    () => topology.sites.find((s) => s.id === effectiveNav.siteId) ?? null,
+    [topology.sites, effectiveNav.siteId]
   );
 
   const currentSubnet = useMemo(
-    () => currentSite?.subnets.find((s) => s.id === nav.subnetId) ?? null,
-    [currentSite, nav.subnetId]
+    () => currentSite?.subnets.find((s) => s.id === effectiveNav.subnetId) ?? null,
+    [currentSite, effectiveNav.subnetId]
+  );
+
+  // Clear selected container when not on LAN view
+  const activeContainer = useMemo(
+    () => (effectiveNav.scale === 'lan' ? selectedContainer : null),
+    [effectiveNav.scale, selectedContainer]
   );
 
   // Stats
@@ -72,20 +96,20 @@ function App() {
   // Breadcrumb items
   const breadcrumbItems = useMemo(() => {
     const items: { label: string; onClick: () => void }[] = [];
-    if (nav.scale !== 'geographic') {
+    if (effectiveNav.scale !== 'geographic') {
       items.push({ label: 'Network', onClick: goToGeographic });
     }
-    if (nav.scale === 'lan' && currentSite) {
+    if (effectiveNav.scale === 'lan' && currentSite) {
       items.push({
         label: currentSite.name,
         onClick: () => goToSite(currentSite.id),
       });
     }
     return items;
-  }, [nav.scale, currentSite, goToGeographic, goToSite]);
+  }, [effectiveNav.scale, currentSite, goToGeographic, goToSite]);
 
   const currentLabel = useMemo(() => {
-    switch (nav.scale) {
+    switch (effectiveNav.scale) {
       case 'geographic':
         return 'Network Overview';
       case 'subnet':
@@ -95,80 +119,85 @@ function App() {
           ? `${currentSubnet.name} (${currentSubnet.cidr})`
           : 'LAN';
     }
-  }, [nav.scale, currentSite, currentSubnet]);
+  }, [effectiveNav.scale, currentSite, currentSubnet]);
 
   return (
-    <div className="app-container">
-      {/* Scanline overlay for CRT effect */}
-      <div className="scanline-overlay" />
+    <TopologyDispatchContext.Provider value={dispatch}>
+      <div className="app-container">
+        {/* Scanline overlay for CRT effect */}
+        <div className="scanline-overlay" />
 
-      {/* Header */}
-      <header className="header-bar">
-        <div className="header-title">AE3GIS</div>
-        <div className="header-stats">
-          <div className="header-stat">
-            <span className="dot" />
-            <span>{topology.sites.length} sites</span>
+        {/* Header */}
+        <header className="header-bar">
+          <div className="header-title">AE3GIS</div>
+          <div className="header-stats">
+            <div className="header-stat">
+              <span className="dot" />
+              <span>{topology.sites.length} sites</span>
+            </div>
+            <div className="header-stat">
+              <span className="dot" />
+              <span>{totalContainers} containers</span>
+            </div>
+            <div className="header-stat">
+              <span className="dot" />
+              <span>System Online</span>
+            </div>
           </div>
-          <div className="header-stat">
-            <span className="dot" />
-            <span>{totalContainers} containers</span>
-          </div>
-          <div className="header-stat">
-            <span className="dot" />
-            <span>System Online</span>
-          </div>
+        </header>
+
+        {/* Breadcrumb navigation */}
+        <Breadcrumb items={breadcrumbItems} current={currentLabel} />
+
+        {/* Main canvas */}
+        <div className="topology-canvas">
+          <ReactFlowProvider>
+            {effectiveNav.scale === 'geographic' && (
+              <GeographicView
+                topology={topology}
+                onSelectSite={goToSite}
+              />
+            )}
+          </ReactFlowProvider>
+
+          <ReactFlowProvider>
+            {effectiveNav.scale === 'subnet' && currentSite && (
+              <SubnetView
+                site={currentSite}
+                onSelectSubnet={goToSubnet}
+              />
+            )}
+          </ReactFlowProvider>
+
+          <ReactFlowProvider>
+            {effectiveNav.scale === 'lan' && currentSubnet && currentSite && (
+              <LanView
+                subnet={currentSubnet}
+                siteId={currentSite.id}
+                onSelectContainer={setSelectedContainer}
+              />
+            )}
+          </ReactFlowProvider>
+
+          {/* Info panel */}
+          <NodeInfoPanel
+            container={activeContainer}
+            onClose={() => setSelectedContainer(null)}
+            onOpenTerminal={(c) => setTerminalContainer(c)}
+            siteId={effectiveNav.siteId}
+            subnetId={effectiveNav.subnetId}
+          />
         </div>
-      </header>
 
-      {/* Breadcrumb navigation */}
-      <Breadcrumb items={breadcrumbItems} current={currentLabel} />
-
-      {/* Main canvas */}
-      <div className="topology-canvas">
-        <ReactFlowProvider>
-          {nav.scale === 'geographic' && (
-            <GeographicView
-              topology={topology}
-              onSelectSite={goToSite}
-            />
-          )}
-        </ReactFlowProvider>
-
-        <ReactFlowProvider>
-          {nav.scale === 'subnet' && currentSite && (
-            <SubnetView
-              site={currentSite}
-              onSelectSubnet={goToSubnet}
-            />
-          )}
-        </ReactFlowProvider>
-
-        <ReactFlowProvider>
-          {nav.scale === 'lan' && currentSubnet && (
-            <LanView
-              subnet={currentSubnet}
-              onSelectContainer={setSelectedContainer}
-            />
-          )}
-        </ReactFlowProvider>
-
-        {/* Info panel */}
-        <NodeInfoPanel
-          container={selectedContainer}
-          onClose={() => setSelectedContainer(null)}
-          onOpenTerminal={(c) => setTerminalContainer(c)}
-        />
+        {/* Terminal overlay */}
+        {terminalContainer && (
+          <TerminalOverlay
+            container={terminalContainer}
+            onClose={() => setTerminalContainer(null)}
+          />
+        )}
       </div>
-
-      {/* Terminal overlay */}
-      {terminalContainer && (
-        <TerminalOverlay
-          container={terminalContainer}
-          onClose={() => setTerminalContainer(null)}
-        />
-      )}
-    </div>
+    </TopologyDispatchContext.Provider>
   );
 }
 

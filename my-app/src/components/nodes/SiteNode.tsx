@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Handle, Position } from '@xyflow/react';
 import type { NodeProps, Node } from '@xyflow/react';
 
@@ -68,14 +69,14 @@ const statsStyle: React.CSSProperties = {
   gap: '8px',
 };
 
-export function SiteNode({ data, id }: NodeProps<SiteNodeType>) {
+export const SiteNode = memo(function SiteNode({ data, id }: NodeProps<SiteNodeType>) {
   return (
     <div
       style={containerStyle}
       onDoubleClick={() => data.onDrillDown(id)}
       title="Double-click to drill down"
     >
-      <Handle type="target" position={Position.Top} style={{ visibility: 'hidden' }} />
+      <Handle type="target" position={Position.Top} style={{ background: '#00ff9f', width: 6, height: 6, border: 'none', opacity: 0.5 }} />
       <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
         <div style={dotStyle} />
         <div style={ringStyle} />
@@ -86,7 +87,7 @@ export function SiteNode({ data, id }: NodeProps<SiteNodeType>) {
         <span>{data.subnetCount} subnets</span>
         <span>{data.containerCount} nodes</span>
       </div>
-      <Handle type="source" position={Position.Bottom} style={{ visibility: 'hidden' }} />
+      <Handle type="source" position={Position.Bottom} style={{ background: '#00ff9f', width: 6, height: 6, border: 'none', opacity: 0.5 }} />
     </div>
   );
-}
+});

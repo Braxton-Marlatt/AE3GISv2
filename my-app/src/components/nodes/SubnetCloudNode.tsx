@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Handle, Position } from '@xyflow/react';
 import type { NodeProps, Node } from '@xyflow/react';
 
@@ -66,7 +67,7 @@ function CloudIcon() {
   );
 }
 
-export function SubnetCloudNode({ data, id }: NodeProps<SubnetCloudNodeType>) {
+export const SubnetCloudNode = memo(function SubnetCloudNode({ data, id }: NodeProps<SubnetCloudNodeType>) {
   return (
     <div
       style={containerStyle}
@@ -85,12 +86,12 @@ export function SubnetCloudNode({ data, id }: NodeProps<SubnetCloudNodeType>) {
         el.style.boxShadow = 'none';
       }}
     >
-      <Handle type="target" position={Position.Top} style={{ visibility: 'hidden' }} />
+      <Handle type="target" position={Position.Top} style={{ background: '#00d4ff', width: 6, height: 6, border: 'none', opacity: 0.5 }} />
       <CloudIcon />
       <div style={labelStyle}>{data.label}</div>
       <div style={cidrStyle}>{data.cidr}</div>
       <div style={countStyle}>{data.containerCount} containers</div>
-      <Handle type="source" position={Position.Bottom} style={{ visibility: 'hidden' }} />
+      <Handle type="source" position={Position.Bottom} style={{ background: '#00d4ff', width: 6, height: 6, border: 'none', opacity: 0.5 }} />
     </div>
   );
-}
+});

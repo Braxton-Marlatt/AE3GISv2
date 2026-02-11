@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Handle, Position } from '@xyflow/react';
 import type { NodeProps, Node } from '@xyflow/react';
 import type { ContainerType, Container } from '../../data/sampleTopology';
@@ -108,7 +109,7 @@ function DeviceIcon({ type }: { type: ContainerType }) {
   }
 }
 
-export function DeviceNode({ data }: NodeProps<DeviceNodeType>) {
+export const DeviceNode = memo(function DeviceNode({ data }: NodeProps<DeviceNodeType>) {
   const { container, onSelect } = data;
   const color = typeColors[container.type];
   const typeLabel = typeLabels[container.type];
@@ -196,4 +197,4 @@ export function DeviceNode({ data }: NodeProps<DeviceNodeType>) {
       <Handle type="source" position={Position.Bottom} style={{ background: color, width: 6, height: 6, border: 'none' }} />
     </div>
   );
-}
+});

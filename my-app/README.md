@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# AE3GIS v2 Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interactive network topology visualizer built with React and ReactFlow. Provides a drill-down view of network infrastructure across three scales: geographic (sites), subnet, and LAN (containers/devices).
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Node.js](https://nodejs.org/) v18+
+- npm (comes with Node)
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repo**
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone <repo-url>
+   cd ae3gis_v2_frontend/my-app
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+2. **Install dependencies**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Start the dev server**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+   ```bash
+   npm run dev
+   ```
+
+   Open the URL shown in your terminal (default: `http://localhost:5173`).
+
+## Available Scripts
+
+| Command           | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start Vite dev server with HMR       |
+| `npm run build`   | Type-check and produce a production build |
+| `npm run preview` | Serve the production build locally   |
+| `npm run lint`    | Run ESLint                           |
+
+## Project Structure
+
+```
+src/
+├── App.tsx                     # Root component, view routing & state
+├── data/
+│   └── sampleTopology.ts       # Sample network topology data
+├── store/                      # State management (Immer reducer)
+├── components/
+│   ├── GeographicView.tsx      # Top-level site map
+│   ├── SubnetView.tsx          # Subnet graph for a site
+│   ├── LanView.tsx             # Device-level LAN graph
+│   ├── Breadcrumb.tsx          # Navigation breadcrumb
+│   ├── NodeInfoPanel.tsx       # Detail panel for selected nodes
+│   ├── TerminalOverlay.tsx     # Terminal UI overlay
+│   ├── Toolbar.tsx             # Toolbar controls
+│   ├── dialogs/                # Modal dialogs (add/edit/connect)
+│   ├── nodes/                  # Custom ReactFlow node types
+│   ├── edges/                  # Custom ReactFlow edge types
+│   └── ui/                     # Reusable UI primitives
+└── utils/                      # Layout helpers and utilities
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React 19** + **TypeScript** + **Vite 7**
+- **@xyflow/react** (ReactFlow) for interactive graph rendering
+- **dagre** for automatic graph layout
+- **Immer / use-immer** for immutable state management

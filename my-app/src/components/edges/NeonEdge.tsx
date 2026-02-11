@@ -57,6 +57,51 @@ export function NeonEdge(props: EdgeProps) {
   );
 }
 
+export function NeonEdgeDirect(props: EdgeProps) {
+  const path = `M ${props.sourceX} ${props.sourceY} L ${props.targetX} ${props.targetY}`;
+  const color = props.data?.color as string || '#00ff9f';
+
+  return (
+    <>
+      <BaseEdge
+        id={props.id + '-glow'}
+        path={path}
+        style={{
+          stroke: color,
+          strokeWidth: 6,
+          opacity: 0.15,
+          filter: 'blur(3px)',
+        }}
+      />
+      <BaseEdge
+        id={props.id}
+        path={path}
+        style={{
+          stroke: color,
+          strokeWidth: 1.5,
+          opacity: 0.7,
+        }}
+      />
+      {props.label && (
+        <text>
+          <textPath
+            href={`#${props.id}`}
+            startOffset="50%"
+            textAnchor="middle"
+            style={{
+              fontSize: '10px',
+              fill: '#808090',
+              fontFamily: "'Share Tech Mono', monospace",
+            }}
+          >
+            {props.label}
+          </textPath>
+        </text>
+      )}
+    </>
+  );
+}
+
 export function NeonEdgeStraight(props: EdgeProps) {
   const path = `M ${props.sourceX} ${props.sourceY} L ${props.targetX} ${props.targetY}`;
   const color = props.data?.color as string || '#00ff9f';

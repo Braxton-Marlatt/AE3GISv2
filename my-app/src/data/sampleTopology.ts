@@ -39,6 +39,7 @@ export interface Site {
   location: string;
   position: { x: number; y: number };
   subnets: Subnet[];
+  subnetConnections: Connection[];
 }
 
 export interface TopologyData {
@@ -111,6 +112,10 @@ export const sampleTopology: TopologyData = {
           ],
         },
       ],
+      subnetConnections: [
+        { from: 'if-corporate', to: 'if-dmz' },
+        { from: 'if-corporate', to: 'if-ot' },
+      ],
     },
     {
       id: 'boise',
@@ -159,6 +164,9 @@ export const sampleTopology: TopologyData = {
           ],
         },
       ],
+      subnetConnections: [
+        { from: 'bo-office', to: 'bo-lab' },
+      ],
     },
     {
       id: 'slc',
@@ -197,6 +205,7 @@ export const sampleTopology: TopologyData = {
           ],
         },
       ],
+      subnetConnections: [],
     },
     {
       id: 'portland',
@@ -223,6 +232,7 @@ export const sampleTopology: TopologyData = {
           ],
         },
       ],
+      subnetConnections: [],
     },
     {
       id: 'denver',
@@ -264,6 +274,9 @@ export const sampleTopology: TopologyData = {
             { from: 'den-ot-sw', to: 'den-plc-2' },
           ],
         },
+      ],
+      subnetConnections: [
+        { from: 'den-ops', to: 'den-ot' },
       ],
     },
   ],

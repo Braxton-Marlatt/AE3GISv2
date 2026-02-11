@@ -1,9 +1,15 @@
-import type { Container } from '../data/sampleTopology';
+import { useContext, useState } from 'react';
+import type { Container, ContainerType } from '../data/sampleTopology';
+import { TopologyDispatchContext } from '../store/TopologyContext';
+import { ContainerDialog } from './dialogs/ContainerDialog';
+import { ConfirmDialog } from './dialogs/ConfirmDialog';
 
 interface NodeInfoPanelProps {
   container: Container | null;
   onClose: () => void;
   onOpenTerminal: (container: Container) => void;
+  siteId: string | null;
+  subnetId: string | null;
 }
 
 const typeDisplayNames: Record<string, string> = {
@@ -20,7 +26,46 @@ export function NodeInfoPanel({
   container,
   onClose,
   onOpenTerminal,
+  siteId,
+  subnetId,
 }: NodeInfoPanelProps) {
+  const dispatch = useContext(TopologyDispatchContext);
+  const [editOpen, setEditOpen] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
+
+  const handleEdit = (data: {
+    name: string; type: ContainerType; ip: string; image: string;
+    status: 'running' | 'stopped' | 'paused'; metadata: Record<string, string>;
+  }) => {
+    if (!container || !siteId || !subnetId) return;
+    dispatch({
+      type: 'UPDATE_CONTAINER',
+      payload: {
+        siteId,
+        subnetId,
+        containerId: container.id,
+        updates: {
+          name: data.name,
+          type: data.type,
+          ip: data.ip,
+          image: data.image || undefined,
+          status: data.status,
+          metadata: Object.keys(data.metadata).length > 0 ? data.metadata : undefined,
+        },
+      },
+    });
+  };
+
+  const handleDelete = () => {
+    if (!container || !siteId || !subnetId) return;
+    dispatch({
+      type: 'DELETE_CONTAINER',
+      payload: { siteId, subnetId, containerId: container.id },
+    });
+    setDeleteOpen(false);
+    onClose();
+  };
+
   return (
     <div className={`info-panel ${container ? 'open' : ''}`}>
       {container && (
@@ -97,7 +142,60 @@ export function NodeInfoPanel({
             >
               Open Terminal
             </button>
+            <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+              <button
+                onClick={() => setEditOpen(true)}
+                style={{
+                  flex: 1,
+                  padding: '8px 12px',
+                  background: 'rgba(0, 212, 255, 0.08)',
+                  border: '1px solid var(--neon-cyan)',
+                  color: 'var(--neon-cyan)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  cursor: 'pointer',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                }}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => setDeleteOpen(true)}
+                style={{
+                  flex: 1,
+                  padding: '8px 12px',
+                  background: 'rgba(255, 51, 68, 0.08)',
+                  border: '1px solid var(--neon-red)',
+                  color: 'var(--neon-red)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  cursor: 'pointer',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                }}
+              >
+                Delete
+              </button>
+            </div>
           </div>
+
+          <ContainerDialog
+            open={editOpen}
+            onClose={() => setEditOpen(false)}
+            onSubmit={handleEdit}
+            initial={container}
+          />
+
+          <ConfirmDialog
+            open={deleteOpen}
+            title="Delete Container"
+            message={`Delete "${container.name}"? All connections will be removed.`}
+            onConfirm={handleDelete}
+            onCancel={() => setDeleteOpen(false)}
+          />
         </>
       )}
     </div>
