@@ -13,7 +13,6 @@ Interactive network topology visualizer built with React and ReactFlow. Provides
 
    ```bash
    git clone <repo-url>
-   cd ae3gis_v2_frontend/my-app
    ```
 
 2. **Install dependencies**
