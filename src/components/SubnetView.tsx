@@ -1,9 +1,11 @@
-import { useCallback, useContext, useMemo, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ReactFlow,
   Background,
   Controls,
   useReactFlow,
+  useNodesState,
+  useEdgesState,
   type Node,
   type Edge,
   type Connection,
@@ -39,7 +41,9 @@ export function SubnetView({ site, onSelectSubnet }: SubnetViewProps) {
   const [connDialog, setConnDialog] = useState(false);
   const [bulkConnDialog, setBulkConnDialog] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState<{ subnetId: string; name: string } | null>(null);
-  const [posOverrides, setPosOverrides] = useState<Map<string, { x: number; y: number }>>(new Map());
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+  // const [posOverrides, setPosOverrides] = useState<Map<string, { x: number; y: number }>>(new Map());
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('dagre');
 
   const handleDrillDown = useCallback(
@@ -47,52 +51,79 @@ export function SubnetView({ site, onSelectSubnet }: SubnetViewProps) {
     [onSelectSubnet]
   );
 
-  // Layout based on selected mode
-  const basePositions = useMemo(() => {
+  // Sync nodes with site data and layout
+  const prevLayoutMode = useRef(layoutMode);
+
+  useEffect(() => {
+    const layoutChanged = layoutMode !== prevLayoutMode.current;
+    prevLayoutMode.current = layoutMode;
+
     const layoutNodes = site.subnets.map(s => ({ id: s.id, width: 200, height: 120 }));
-    if (layoutNodes.length === 0) return new Map<string, { x: number; y: number }>();
-    if (layoutNodes.length === 1) {
-      const m = new Map<string, { x: number; y: number }>();
-      m.set(layoutNodes[0].id, { x: 400, y: 300 });
-      return m;
+    let computedPositions: Map<string, { x: number; y: number }> = new Map();
+
+    if (layoutNodes.length > 0) {
+      if (layoutNodes.length === 1) {
+        computedPositions.set(layoutNodes[0].id, { x: 400, y: 300 });
+      } else if (layoutMode === 'circle') {
+        computedPositions = computeCircleLayout(
+          layoutNodes,
+          site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
+        );
+      } else if (layoutMode === 'grid') {
+        computedPositions = computeGridLayout(layoutNodes);
+      } else {
+        computedPositions = computeLayout(
+          layoutNodes,
+          site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
+          { direction: 'TB', nodeSpacing: 100, rankSpacing: 120 }
+        );
+      }
     }
-    if (layoutMode === 'circle') return computeCircleLayout(
-      layoutNodes,
-      site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
-    );
-    if (layoutMode === 'grid') return computeGridLayout(layoutNodes);
-    return computeLayout(
-      layoutNodes,
-      site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
-      { direction: 'TB', nodeSpacing: 100, rankSpacing: 120 }
-    );
-  }, [site.subnets, site.subnetConnections, layoutMode]);
 
-  const nodes: Node[] = useMemo(() =>
-    site.subnets.map((subnet) => ({
-      id: subnet.id,
-      type: 'subnetCloud',
-      position: posOverrides.get(subnet.id) || basePositions.get(subnet.id) || { x: 400, y: 300 },
-      data: {
-        label: subnet.name,
-        cidr: subnet.cidr,
-        containerCount: subnet.containers.length,
-        onDrillDown: handleDrillDown,
-      },
-    })),
-    [site.subnets, basePositions, posOverrides, handleDrillDown]
-  );
+    setNodes((currentNodes) => {
+      return site.subnets.map((subnet) => {
+        // If layout didn't change, try to preserve existing position
+        if (!layoutChanged) {
+          const existingNode = currentNodes.find(n => n.id === subnet.id);
+          if (existingNode) {
+            return {
+              ...existingNode,
+              data: { ...existingNode.data, label: subnet.name, cidr: subnet.cidr, containerCount: subnet.containers.length, onDrillDown: handleDrillDown },
+            };
+          }
+        }
 
-  const edges: Edge[] = useMemo(() =>
-    site.subnetConnections.map((conn, i) => ({
-      id: `subnet-edge-${i}`,
-      source: conn.from,
-      target: conn.to,
-      type: 'neon',
-      data: { color: '#00d4ff' },
-    })),
-    [site.subnetConnections]
-  );
+        // Otherwise use computed layout position
+        const pos = computedPositions.get(subnet.id) || { x: 400, y: 300 };
+        return {
+          id: subnet.id,
+          type: 'subnetCloud',
+          position: pos,
+          data: {
+            label: subnet.name,
+            cidr: subnet.cidr,
+            containerCount: subnet.containers.length,
+            onDrillDown: handleDrillDown,
+          },
+        };
+      });
+    });
+  }, [site.subnets, site.subnetConnections, layoutMode, handleDrillDown, setNodes]);
+
+  // Sync edges
+  useEffect(() => {
+    setEdges(
+      site.subnetConnections.map((conn, i) => ({
+        id: `subnet-edge-${i}`,
+        source: conn.from,
+        target: conn.to,
+        type: 'neon',
+        data: { color: '#00d4ff' },
+      }))
+    );
+  }, [site.subnetConnections, setEdges]);
+
+
 
   // Context menu handlers
   const onPaneContextMenu = useCallback((event: MouseEvent | React.MouseEvent) => {
@@ -213,15 +244,50 @@ export function SubnetView({ site, onSelectSubnet }: SubnetViewProps) {
     }
   }, [dispatch, site.id]);
 
-  // Persist drag positions
-  const onNodeDragStop = useCallback((_: React.MouseEvent, node: Node) => {
-    setPosOverrides(prev => new Map(prev).set(node.id, node.position));
+  // Persist drag positions - local state only via useNodesState
+  const onNodeDragStop = useCallback((_: React.MouseEvent, _node: Node) => {
+    // setPosOverrides(prev => new Map(prev).set(node.id, node.position));
   }, []);
 
   const handleAutoLayout = useCallback(() => {
-    setPosOverrides(new Map());
+    // Force re-layout logic by tricking the effect or explicit setNodes
+    // Re-using the logic from LanView - if layoutMode didn't change, we might need a force flag?
+    // Or just toggle layoutMode. 
+    // Actually, the simplest for now is to let the user switch layout modes.
+    // But if they click the button, they expect reset.
+    // The previous implementation cleared posOverrides.
+    // Here we can re-run the layout computation.
+
+    // We can manually setNodes to computed positions.
+    const layoutNodes = site.subnets.map(s => ({ id: s.id, width: 200, height: 120 }));
+    let computedPositions: Map<string, { x: number; y: number }> = new Map();
+
+    if (layoutNodes.length > 0) {
+      if (layoutNodes.length === 1) {
+        computedPositions.set(layoutNodes[0].id, { x: 400, y: 300 });
+      } else if (layoutMode === 'circle') {
+        computedPositions = computeCircleLayout(
+          layoutNodes,
+          site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
+        );
+      } else if (layoutMode === 'grid') {
+        computedPositions = computeGridLayout(layoutNodes);
+      } else {
+        computedPositions = computeLayout(
+          layoutNodes,
+          site.subnetConnections.map(c => ({ source: c.from, target: c.to })),
+          { direction: 'TB', nodeSpacing: 100, rankSpacing: 120 }
+        );
+      }
+    }
+
+    setNodes(nds => nds.map(n => ({
+      ...n,
+      position: computedPositions.get(n.id) || { x: 400, y: 300 }
+    })));
+
     setTimeout(() => fitView({ padding: 0.4 }), 50);
-  }, [fitView]);
+  }, [fitView, site.subnets, site.subnetConnections, layoutMode, setNodes]);
 
   const connectionNodes = useMemo(
     () => site.subnets.map(s => ({ id: s.id, name: s.name })),
@@ -242,6 +308,8 @@ export function SubnetView({ site, onSelectSubnet }: SubnetViewProps) {
         proOptions={{ hideAttribution: true }}
         nodesDraggable={true}
         nodesConnectable={true}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         onPaneContextMenu={onPaneContextMenu}
         onNodeContextMenu={onNodeContextMenu}
         onEdgeContextMenu={onEdgeContextMenu}

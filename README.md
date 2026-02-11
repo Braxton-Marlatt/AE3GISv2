@@ -7,21 +7,14 @@ Interactive network topology visualizer built with React and ReactFlow. Provides
 - [Node.js](https://nodejs.org/) v18+
 - npm (comes with Node)
 
-## Getting Started
 
-1. **Clone the repo**
-
-   ```bash
-   git clone <repo-url>
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Start the dev server**
+2. **Start the dev server**
 
    ```bash
    npm run dev

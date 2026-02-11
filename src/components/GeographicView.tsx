@@ -1,10 +1,12 @@
-import { useCallback, useContext, useMemo, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import {
   ReactFlow,
   Background,
   Controls,
   MiniMap,
   useReactFlow,
+  useNodesState,
+  useEdgesState,
   type Node,
   type Edge,
   type Connection,
@@ -49,8 +51,12 @@ export function GeographicView({ topology, onSelectSite }: GeographicViewProps) 
     [onSelectSite]
   );
 
-  const nodes: Node[] = useMemo(
-    () =>
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+
+  // Sync nodes with topology data
+  useEffect(() => {
+    setNodes(
       topology.sites.map((site) => ({
         id: site.id,
         type: 'site',
@@ -65,12 +71,13 @@ export function GeographicView({ topology, onSelectSite }: GeographicViewProps) 
           ),
           onDrillDown: handleDrillDown,
         },
-      })),
-    [topology.sites, handleDrillDown]
-  );
+      }))
+    );
+  }, [topology.sites, handleDrillDown, setNodes]);
 
-  const edges: Edge[] = useMemo(
-    () =>
+  // Sync edges with topology data
+  useEffect(() => {
+    setEdges(
       topology.siteConnections.map((conn, i) => ({
         id: `site-edge-${i}`,
         source: conn.from,
@@ -78,9 +85,11 @@ export function GeographicView({ topology, onSelectSite }: GeographicViewProps) 
         type: 'neonStraight',
         label: conn.label,
         data: { color: '#00ff9f' },
-      })),
-    [topology.siteConnections]
-  );
+      }))
+    );
+  }, [topology.siteConnections, setEdges]);
+
+
 
   // Context menu handlers
   const onPaneContextMenu = useCallback((event: MouseEvent | React.MouseEvent) => {
@@ -235,6 +244,8 @@ export function GeographicView({ topology, onSelectSite }: GeographicViewProps) 
         proOptions={{ hideAttribution: true }}
         nodesDraggable={true}
         nodesConnectable={true}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         onPaneContextMenu={onPaneContextMenu}
         onNodeContextMenu={onNodeContextMenu}
         onEdgeContextMenu={onEdgeContextMenu}
