@@ -1,0 +1,488 @@
+name: ae3gis-network
+topology:
+  nodes:
+    if-router-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    if-fw-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.2/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    if-sw-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set eth5 master br0
+      - ip link set br0 up
+      - ip addr add 10.0.1.3/24 dev br0
+    if-web-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.10/24 dev eth1
+    if-ws-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.100/24 dev eth1
+    if-ws-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.101/24 dev eth1
+    if-ws-3:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.1.102/24 dev eth1
+    if-ot-sw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set eth5 master br0
+      - ip link set br0 up
+      - ip addr add 10.0.2.1/24 dev br0
+    if-plc-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.2.10/24 dev eth1
+    if-plc-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.2.11/24 dev eth1
+    if-plc-3:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.2.12/24 dev eth1
+    if-ot-ws:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.2.100/24 dev eth1
+    if-dmz-fw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.3.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    if-dmz-web:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.3.10/24 dev eth1
+    if-dmz-file:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.0.3.11/24 dev eth1
+    bo-router-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    bo-sw-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set eth5 master br0
+      - ip link set eth6 master br0
+      - ip link set eth7 master br0
+      - ip link set br0 up
+      - ip addr add 10.1.1.2/24 dev br0
+    bo-file-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.10/24 dev eth1
+    bo-ws-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.100/24 dev eth1
+    bo-ws-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.101/24 dev eth1
+    bo-ws-3:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.102/24 dev eth1
+    bo-ws-4:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.103/24 dev eth1
+    bo-ws-5:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.1.104/24 dev eth1
+    bo-lab-sw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set br0 up
+      - ip addr add 10.1.2.1/24 dev br0
+    bo-lab-web:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.2.10/24 dev eth1
+    bo-lab-ws-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.2.100/24 dev eth1
+    bo-lab-ws-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.1.2.101/24 dev eth1
+    slc-router-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    slc-router-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.2/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    slc-fw-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.3/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    slc-sw-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set br0 up
+      - ip addr add 10.2.1.4/24 dev br0
+    slc-sw-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set br0 up
+      - ip addr add 10.2.1.5/24 dev br0
+    slc-web-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.10/24 dev eth1
+    slc-web-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.11/24 dev eth1
+    slc-web-3:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.12/24 dev eth1
+    slc-web-4:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.13/24 dev eth1
+    slc-file-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.20/24 dev eth1
+    slc-file-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.2.1.21/24 dev eth1
+    pdx-router:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.3.1.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    pdx-sw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set br0 up
+      - ip addr add 10.3.1.2/24 dev br0
+    pdx-ws-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.3.1.100/24 dev eth1
+    pdx-ws-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.3.1.101/24 dev eth1
+    pdx-ws-3:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.3.1.102/24 dev eth1
+    den-router:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.1.1/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    den-fw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.1.2/24 dev eth1
+      - sysctl -w net.ipv4.ip_forward=1
+    den-sw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set eth4 master br0
+      - ip link set br0 up
+      - ip addr add 10.4.1.3/24 dev br0
+    den-web:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.1.10/24 dev eth1
+    den-ws-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.1.100/24 dev eth1
+    den-ws-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.1.101/24 dev eth1
+    den-ot-sw:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip link add br0 type bridge
+      - ip link set eth1 master br0
+      - ip link set eth2 master br0
+      - ip link set eth3 master br0
+      - ip link set br0 up
+      - ip addr add 10.4.2.1/24 dev br0
+    den-plc-1:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.2.10/24 dev eth1
+    den-plc-2:
+      kind: linux
+      image: alpine:latest
+      exec:
+      - ip addr add 10.4.2.11/24 dev eth1
+  links:
+  - endpoints:
+    - if-router-1:eth1
+    - if-fw-1:eth1
+  - endpoints:
+    - if-fw-1:eth2
+    - if-sw-1:eth1
+  - endpoints:
+    - if-sw-1:eth2
+    - if-web-1:eth1
+  - endpoints:
+    - if-sw-1:eth3
+    - if-ws-1:eth1
+  - endpoints:
+    - if-sw-1:eth4
+    - if-ws-2:eth1
+  - endpoints:
+    - if-sw-1:eth5
+    - if-ws-3:eth1
+  - endpoints:
+    - if-ot-sw:eth1
+    - if-plc-1:eth1
+  - endpoints:
+    - if-ot-sw:eth2
+    - if-plc-2:eth1
+  - endpoints:
+    - if-ot-sw:eth3
+    - if-plc-3:eth1
+  - endpoints:
+    - if-ot-sw:eth4
+    - if-ot-ws:eth1
+  - endpoints:
+    - if-dmz-fw:eth1
+    - if-dmz-web:eth1
+  - endpoints:
+    - if-dmz-fw:eth2
+    - if-dmz-file:eth1
+  - endpoints:
+    - if-router-1:eth2
+    - if-dmz-fw:eth3
+  - endpoints:
+    - if-router-1:eth3
+    - if-ot-sw:eth5
+  - endpoints:
+    - bo-router-1:eth1
+    - bo-sw-1:eth1
+  - endpoints:
+    - bo-sw-1:eth2
+    - bo-file-1:eth1
+  - endpoints:
+    - bo-sw-1:eth3
+    - bo-ws-1:eth1
+  - endpoints:
+    - bo-sw-1:eth4
+    - bo-ws-2:eth1
+  - endpoints:
+    - bo-sw-1:eth5
+    - bo-ws-3:eth1
+  - endpoints:
+    - bo-sw-1:eth6
+    - bo-ws-4:eth1
+  - endpoints:
+    - bo-sw-1:eth7
+    - bo-ws-5:eth1
+  - endpoints:
+    - bo-lab-sw:eth1
+    - bo-lab-web:eth1
+  - endpoints:
+    - bo-lab-sw:eth2
+    - bo-lab-ws-1:eth1
+  - endpoints:
+    - bo-lab-sw:eth3
+    - bo-lab-ws-2:eth1
+  - endpoints:
+    - bo-router-1:eth2
+    - bo-lab-sw:eth4
+  - endpoints:
+    - slc-router-1:eth1
+    - slc-fw-1:eth1
+  - endpoints:
+    - slc-router-2:eth1
+    - slc-fw-1:eth2
+  - endpoints:
+    - slc-fw-1:eth3
+    - slc-sw-1:eth1
+  - endpoints:
+    - slc-fw-1:eth4
+    - slc-sw-2:eth1
+  - endpoints:
+    - slc-sw-1:eth2
+    - slc-web-1:eth1
+  - endpoints:
+    - slc-sw-1:eth3
+    - slc-web-2:eth1
+  - endpoints:
+    - slc-sw-1:eth4
+    - slc-file-1:eth1
+  - endpoints:
+    - slc-sw-2:eth2
+    - slc-web-3:eth1
+  - endpoints:
+    - slc-sw-2:eth3
+    - slc-web-4:eth1
+  - endpoints:
+    - slc-sw-2:eth4
+    - slc-file-2:eth1
+  - endpoints:
+    - pdx-router:eth1
+    - pdx-sw:eth1
+  - endpoints:
+    - pdx-sw:eth2
+    - pdx-ws-1:eth1
+  - endpoints:
+    - pdx-sw:eth3
+    - pdx-ws-2:eth1
+  - endpoints:
+    - pdx-sw:eth4
+    - pdx-ws-3:eth1
+  - endpoints:
+    - den-router:eth1
+    - den-fw:eth1
+  - endpoints:
+    - den-fw:eth2
+    - den-sw:eth1
+  - endpoints:
+    - den-sw:eth2
+    - den-web:eth1
+  - endpoints:
+    - den-sw:eth3
+    - den-ws-1:eth1
+  - endpoints:
+    - den-sw:eth4
+    - den-ws-2:eth1
+  - endpoints:
+    - den-ot-sw:eth1
+    - den-plc-1:eth1
+  - endpoints:
+    - den-ot-sw:eth2
+    - den-plc-2:eth1
+  - endpoints:
+    - den-router:eth2
+    - den-ot-sw:eth3
+  - endpoints:
+    - if-router-1:eth4
+    - bo-router-1:eth3
+  - endpoints:
+    - if-router-1:eth5
+    - slc-router-1:eth2
+  - endpoints:
+    - if-router-1:eth6
+    - den-router:eth3
+  - endpoints:
+    - bo-router-1:eth4
+    - pdx-router:eth2
+  - endpoints:
+    - slc-router-1:eth3
+    - den-router:eth4
