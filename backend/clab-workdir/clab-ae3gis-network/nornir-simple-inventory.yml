@@ -8,19 +8,19 @@
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.6
+    hostname: 172.20.20.7
 7c84783b-7761-4b98-b5e5-c0767188271e:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.5
+    hostname: 172.20.20.6
 9f5d1a53-1998-43a4-821e-defac444b6da:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.3
+    hostname: 172.20.20.5
 b1e15328-af2f-426e-8ed9-78ad57029c64:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.2
+    hostname: 172.20.20.8

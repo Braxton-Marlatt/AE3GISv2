@@ -10,10 +10,10 @@ all:
         clab-ae3gis-network-64cb1fc8-5e16-4f07-8b11-1d681390b555:
           ansible_host: 172.20.20.4
         clab-ae3gis-network-6766ad12-d9d2-45e4-924c-e4e414709ee7:
-          ansible_host: 172.20.20.6
+          ansible_host: 172.20.20.7
         clab-ae3gis-network-7c84783b-7761-4b98-b5e5-c0767188271e:
-          ansible_host: 172.20.20.5
+          ansible_host: 172.20.20.6
         clab-ae3gis-network-9f5d1a53-1998-43a4-821e-defac444b6da:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.5
         clab-ae3gis-network-b1e15328-af2f-426e-8ed9-78ad57029c64:
-          ansible_host: 172.20.20.2
+          ansible_host: 172.20.20.8

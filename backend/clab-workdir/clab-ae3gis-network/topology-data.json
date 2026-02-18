@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-3dd7812089fa",
+        "bridge": "br-bf68162156c2",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -15,7 +15,7 @@
       }
     }
   },
-  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrl+glB509mUULyECTuYMh1Bl6rESsxm0b69JqLI07n"],
+  "ssh-pub-keys": [],
   "nodes": {
     "64cb1fc8-5e16-4f07-8b11-1d681390b555": {
       "index": "0",
@@ -23,7 +23,7 @@
       "longname": "clab-ae3gis-network-64cb1fc8-5e16-4f07-8b11-1d681390b555",
       "fqdn": "64cb1fc8-5e16-4f07-8b11-1d681390b555.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/64cb1fc8-5e16-4f07-8b11-1d681390b555",
+      "labdir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/64cb1fc8-5e16-4f07-8b11-1d681390b555",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
@@ -34,15 +34,15 @@
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-3dd7812089fa",
+        "clab-mgmt-net-bridge": "br-bf68162156c2",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/64cb1fc8-5e16-4f07-8b11-1d681390b555",
+        "clab-node-lab-dir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/64cb1fc8-5e16-4f07-8b11-1d681390b555",
         "clab-node-longname": "clab-ae3gis-network-64cb1fc8-5e16-4f07-8b11-1d681390b555",
         "clab-node-name": "64cb1fc8-5e16-4f07-8b11-1d681390b555",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
+        "clab-owner": "capstone",
+        "clab-topo-file": "/home/capstone/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -54,26 +54,26 @@
       "longname": "clab-ae3gis-network-6766ad12-d9d2-45e4-924c-e4e414709ee7",
       "fqdn": "6766ad12-d9d2-45e4-924c-e4e414709ee7.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/6766ad12-d9d2-45e4-924c-e4e414709ee7",
+      "labdir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/6766ad12-d9d2-45e4-924c-e4e414709ee7",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-address": "172.20.20.7",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-3dd7812089fa",
+        "clab-mgmt-net-bridge": "br-bf68162156c2",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/6766ad12-d9d2-45e4-924c-e4e414709ee7",
+        "clab-node-lab-dir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/6766ad12-d9d2-45e4-924c-e4e414709ee7",
         "clab-node-longname": "clab-ae3gis-network-6766ad12-d9d2-45e4-924c-e4e414709ee7",
         "clab-node-name": "6766ad12-d9d2-45e4-924c-e4e414709ee7",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
+        "clab-owner": "capstone",
+        "clab-topo-file": "/home/capstone/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -85,26 +85,26 @@
       "longname": "clab-ae3gis-network-7c84783b-7761-4b98-b5e5-c0767188271e",
       "fqdn": "7c84783b-7761-4b98-b5e5-c0767188271e.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/7c84783b-7761-4b98-b5e5-c0767188271e",
+      "labdir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/7c84783b-7761-4b98-b5e5-c0767188271e",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-address": "172.20.20.6",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-3dd7812089fa",
+        "clab-mgmt-net-bridge": "br-bf68162156c2",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/7c84783b-7761-4b98-b5e5-c0767188271e",
+        "clab-node-lab-dir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/7c84783b-7761-4b98-b5e5-c0767188271e",
         "clab-node-longname": "clab-ae3gis-network-7c84783b-7761-4b98-b5e5-c0767188271e",
         "clab-node-name": "7c84783b-7761-4b98-b5e5-c0767188271e",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
+        "clab-owner": "capstone",
+        "clab-topo-file": "/home/capstone/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -116,26 +116,26 @@
       "longname": "clab-ae3gis-network-9f5d1a53-1998-43a4-821e-defac444b6da",
       "fqdn": "9f5d1a53-1998-43a4-821e-defac444b6da.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/9f5d1a53-1998-43a4-821e-defac444b6da",
+      "labdir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/9f5d1a53-1998-43a4-821e-defac444b6da",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-address": "172.20.20.5",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-3dd7812089fa",
+        "clab-mgmt-net-bridge": "br-bf68162156c2",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/9f5d1a53-1998-43a4-821e-defac444b6da",
+        "clab-node-lab-dir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/9f5d1a53-1998-43a4-821e-defac444b6da",
         "clab-node-longname": "clab-ae3gis-network-9f5d1a53-1998-43a4-821e-defac444b6da",
         "clab-node-name": "9f5d1a53-1998-43a4-821e-defac444b6da",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
+        "clab-owner": "capstone",
+        "clab-topo-file": "/home/capstone/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -147,26 +147,26 @@
       "longname": "clab-ae3gis-network-b1e15328-af2f-426e-8ed9-78ad57029c64",
       "fqdn": "b1e15328-af2f-426e-8ed9-78ad57029c64.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/b1e15328-af2f-426e-8ed9-78ad57029c64",
+      "labdir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/b1e15328-af2f-426e-8ed9-78ad57029c64",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-address": "172.20.20.8",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-3dd7812089fa",
+        "clab-mgmt-net-bridge": "br-bf68162156c2",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/b1e15328-af2f-426e-8ed9-78ad57029c64",
+        "clab-node-lab-dir": "/home/capstone/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/b1e15328-af2f-426e-8ed9-78ad57029c64",
         "clab-node-longname": "clab-ae3gis-network-b1e15328-af2f-426e-8ed9-78ad57029c64",
         "clab-node-name": "b1e15328-af2f-426e-8ed9-78ad57029c64",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
+        "clab-owner": "capstone",
+        "clab-topo-file": "/home/capstone/AE3GISv2/backend/clab-workdir/d577e60461d540e0803b9dcab2b64c0a.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -179,13 +179,13 @@
         "a": {
           "node": "b1e15328-af2f-426e-8ed9-78ad57029c64",
           "interface": "eth1",
-          "mac": "aa:c1:ab:5c:71:8f",
+          "mac": "aa:c1:ab:4c:e9:9b",
           "peer": "z"
         },
         "z": {
           "node": "9f5d1a53-1998-43a4-821e-defac444b6da",
           "interface": "eth1",
-          "mac": "aa:c1:ab:f0:9c:58",
+          "mac": "aa:c1:ab:3f:b5:27",
           "peer": "a"
         }
       }
@@ -195,13 +195,13 @@
         "a": {
           "node": "9f5d1a53-1998-43a4-821e-defac444b6da",
           "interface": "eth2",
-          "mac": "aa:c1:ab:b5:f8:d0",
+          "mac": "aa:c1:ab:d7:fb:43",
           "peer": "z"
         },
         "z": {
           "node": "7c84783b-7761-4b98-b5e5-c0767188271e",
           "interface": "eth1",
-          "mac": "aa:c1:ab:74:17:a3",
+          "mac": "aa:c1:ab:19:24:25",
           "peer": "a"
         }
       }
@@ -211,13 +211,13 @@
         "a": {
           "node": "7c84783b-7761-4b98-b5e5-c0767188271e",
           "interface": "eth2",
-          "mac": "aa:c1:ab:3b:ce:4b",
+          "mac": "aa:c1:ab:ae:bb:c8",
           "peer": "z"
         },
         "z": {
           "node": "6766ad12-d9d2-45e4-924c-e4e414709ee7",
           "interface": "eth1",
-          "mac": "aa:c1:ab:8e:30:8e",
+          "mac": "aa:c1:ab:fe:4f:58",
           "peer": "a"
         }
       }
@@ -227,13 +227,13 @@
         "a": {
           "node": "6766ad12-d9d2-45e4-924c-e4e414709ee7",
           "interface": "eth2",
-          "mac": "aa:c1:ab:c0:44:d8",
+          "mac": "aa:c1:ab:ee:3a:45",
           "peer": "z"
         },
         "z": {
           "node": "64cb1fc8-5e16-4f07-8b11-1d681390b555",
           "interface": "eth1",
-          "mac": "aa:c1:ab:05:de:a1",
+          "mac": "aa:c1:ab:89:11:07",
           "peer": "a"
         }
       }
