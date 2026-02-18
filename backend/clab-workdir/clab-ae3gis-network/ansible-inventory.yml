@@ -7,107 +7,13 @@ all:
   children:
     linux:
       hosts:
-        clab-ae3gis-network-bo-file-1:
+        clab-ae3gis-network-64cb1fc8-5e16-4f07-8b11-1d681390b555:
           ansible_host: 172.20.20.4
-        clab-ae3gis-network-bo-lab-sw:
-          ansible_host: 172.20.20.41
-        clab-ae3gis-network-bo-lab-web:
-          ansible_host: 172.20.20.32
-        clab-ae3gis-network-bo-lab-ws-1:
-          ansible_host: 172.20.20.40
-        clab-ae3gis-network-bo-lab-ws-2:
-          ansible_host: 172.20.20.17
-        clab-ae3gis-network-bo-router-1:
-          ansible_host: 172.20.20.8
-        clab-ae3gis-network-bo-sw-1:
-          ansible_host: 172.20.20.24
-        clab-ae3gis-network-bo-ws-1:
-          ansible_host: 172.20.20.29
-        clab-ae3gis-network-bo-ws-2:
-          ansible_host: 172.20.20.22
-        clab-ae3gis-network-bo-ws-3:
-          ansible_host: 172.20.20.52
-        clab-ae3gis-network-bo-ws-4:
-          ansible_host: 172.20.20.15
-        clab-ae3gis-network-bo-ws-5:
-          ansible_host: 172.20.20.37
-        clab-ae3gis-network-den-fw:
-          ansible_host: 172.20.20.12
-        clab-ae3gis-network-den-ot-sw:
-          ansible_host: 172.20.20.48
-        clab-ae3gis-network-den-plc-1:
-          ansible_host: 172.20.20.19
-        clab-ae3gis-network-den-plc-2:
-          ansible_host: 172.20.20.44
-        clab-ae3gis-network-den-router:
-          ansible_host: 172.20.20.54
-        clab-ae3gis-network-den-sw:
-          ansible_host: 172.20.20.23
-        clab-ae3gis-network-den-web:
-          ansible_host: 172.20.20.42
-        clab-ae3gis-network-den-ws-1:
-          ansible_host: 172.20.20.35
-        clab-ae3gis-network-den-ws-2:
-          ansible_host: 172.20.20.13
-        clab-ae3gis-network-if-dmz-file:
-          ansible_host: 172.20.20.39
-        clab-ae3gis-network-if-dmz-fw:
-          ansible_host: 172.20.20.55
-        clab-ae3gis-network-if-dmz-web:
-          ansible_host: 172.20.20.21
-        clab-ae3gis-network-if-fw-1:
-          ansible_host: 172.20.20.50
-        clab-ae3gis-network-if-ot-sw:
-          ansible_host: 172.20.20.25
-        clab-ae3gis-network-if-ot-ws:
-          ansible_host: 172.20.20.45
-        clab-ae3gis-network-if-plc-1:
-          ansible_host: 172.20.20.36
-        clab-ae3gis-network-if-plc-2:
-          ansible_host: 172.20.20.46
-        clab-ae3gis-network-if-plc-3:
-          ansible_host: 172.20.20.31
-        clab-ae3gis-network-if-router-1:
-          ansible_host: 172.20.20.43
-        clab-ae3gis-network-if-sw-1:
-          ansible_host: 172.20.20.33
-        clab-ae3gis-network-if-web-1:
-          ansible_host: 172.20.20.16
-        clab-ae3gis-network-if-ws-1:
-          ansible_host: 172.20.20.9
-        clab-ae3gis-network-if-ws-2:
-          ansible_host: 172.20.20.47
-        clab-ae3gis-network-if-ws-3:
-          ansible_host: 172.20.20.11
-        clab-ae3gis-network-pdx-router:
-          ansible_host: 172.20.20.5
-        clab-ae3gis-network-pdx-sw:
-          ansible_host: 172.20.20.26
-        clab-ae3gis-network-pdx-ws-1:
-          ansible_host: 172.20.20.14
-        clab-ae3gis-network-pdx-ws-2:
+        clab-ae3gis-network-6766ad12-d9d2-45e4-924c-e4e414709ee7:
           ansible_host: 172.20.20.6
-        clab-ae3gis-network-pdx-ws-3:
-          ansible_host: 172.20.20.20
-        clab-ae3gis-network-slc-file-1:
-          ansible_host: 172.20.20.51
-        clab-ae3gis-network-slc-file-2:
-          ansible_host: 172.20.20.27
-        clab-ae3gis-network-slc-fw-1:
-          ansible_host: 172.20.20.18
-        clab-ae3gis-network-slc-router-1:
-          ansible_host: 172.20.20.53
-        clab-ae3gis-network-slc-router-2:
-          ansible_host: 172.20.20.49
-        clab-ae3gis-network-slc-sw-1:
+        clab-ae3gis-network-7c84783b-7761-4b98-b5e5-c0767188271e:
+          ansible_host: 172.20.20.5
+        clab-ae3gis-network-9f5d1a53-1998-43a4-821e-defac444b6da:
           ansible_host: 172.20.20.3
-        clab-ae3gis-network-slc-sw-2:
-          ansible_host: 172.20.20.28
-        clab-ae3gis-network-slc-web-1:
-          ansible_host: 172.20.20.30
-        clab-ae3gis-network-slc-web-2:
-          ansible_host: 172.20.20.38
-        clab-ae3gis-network-slc-web-3:
-          ansible_host: 172.20.20.34
-        clab-ae3gis-network-slc-web-4:
-          ansible_host: 172.20.20.7
+        clab-ae3gis-network-b1e15328-af2f-426e-8ed9-78ad57029c64:
+          ansible_host: 172.20.20.2
