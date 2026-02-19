@@ -1,0 +1,399 @@
+{
+  "name": "alpine-ovs-lab",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-d02300cf6174",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrl+glB509mUULyECTuYMh1Bl6rESsxm0b69JqLI07n"],
+  "nodes": {
+    "alpine1": {
+      "index": "0",
+      "shortname": "alpine1",
+      "longname": "clab-alpine-ovs-lab-alpine1",
+      "fqdn": "alpine1.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine1",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine1",
+        "clab-node-longname": "clab-alpine-ovs-lab-alpine1",
+        "clab-node-name": "alpine1",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "alpine2": {
+      "index": "1",
+      "shortname": "alpine2",
+      "longname": "clab-alpine-ovs-lab-alpine2",
+      "fqdn": "alpine2.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine2",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.9",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine2",
+        "clab-node-longname": "clab-alpine-ovs-lab-alpine2",
+        "clab-node-name": "alpine2",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "alpine3": {
+      "index": "2",
+      "shortname": "alpine3",
+      "longname": "clab-alpine-ovs-lab-alpine3",
+      "fqdn": "alpine3.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine3",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine3",
+        "clab-node-longname": "clab-alpine-ovs-lab-alpine3",
+        "clab-node-name": "alpine3",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "alpine4": {
+      "index": "3",
+      "shortname": "alpine4",
+      "longname": "clab-alpine-ovs-lab-alpine4",
+      "fqdn": "alpine4.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine4",
+      "kind": "linux",
+      "image": "alpine:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.7",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/alpine4",
+        "clab-node-longname": "clab-alpine-ovs-lab-alpine4",
+        "clab-node-name": "alpine4",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "router1": {
+      "index": "4",
+      "shortname": "router1",
+      "longname": "clab-alpine-ovs-lab-router1",
+      "fqdn": "router1.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/router1",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/router1",
+        "clab-node-longname": "clab-alpine-ovs-lab-router1",
+        "clab-node-name": "router1",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "router2": {
+      "index": "5",
+      "shortname": "router2",
+      "longname": "clab-alpine-ovs-lab-router2",
+      "fqdn": "router2.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/router2",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/router2",
+        "clab-node-longname": "clab-alpine-ovs-lab-router2",
+        "clab-node-name": "router2",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "switch1": {
+      "index": "6",
+      "shortname": "switch1",
+      "longname": "clab-alpine-ovs-lab-switch1",
+      "fqdn": "switch1.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/switch1",
+      "kind": "linux",
+      "image": "tollan/openvswitch-xp:v0.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/switch1",
+        "clab-node-longname": "clab-alpine-ovs-lab-switch1",
+        "clab-node-name": "switch1",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    },
+    "switch2": {
+      "index": "7",
+      "shortname": "switch2",
+      "longname": "clab-alpine-ovs-lab-switch2",
+      "fqdn": "switch2.alpine-ovs-lab.io",
+      "group": "",
+      "labdir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/switch2",
+      "kind": "linux",
+      "image": "tollan/openvswitch-xp:v0.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.8",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-git-branch": "test",
+        "clab-git-hash": "ec4e523",
+        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/brax/AE3GISv2/clab-alpine-ovs-lab/switch2",
+        "clab-node-longname": "clab-alpine-ovs-lab-switch2",
+        "clab-node-name": "switch2",
+        "clab-node-type": "",
+        "clab-owner": "brax",
+        "clab-topo-file": "/home/brax/AE3GISv2/topo-clab.yml",
+        "containerlab": "alpine-ovs-lab"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "router1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:82:90:2e",
+          "peer": "z"
+        },
+        "z": {
+          "node": "router2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:10:b5:33",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "router1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:e9:ca:ad",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:eb:a2:6b",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "router2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:96:7b:61",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:ee:c9:0b",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "alpine1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:f5:9a:75",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch1",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:9a:a7:3e",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "alpine2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:15:03:0a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch1",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:54:b9:ff",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "alpine3",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:53:13:2a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch2",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:28:a7:35",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "alpine4",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:14:ae:78",
+          "peer": "z"
+        },
+        "z": {
+          "node": "switch2",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:90:a5:3d",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

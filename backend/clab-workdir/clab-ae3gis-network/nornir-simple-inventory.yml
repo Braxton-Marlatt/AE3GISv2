@@ -1,26 +1,281 @@
 ---
-64cb1fc8-5e16-4f07-8b11-1d681390b555:
+bo-file-1:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.4
-6766ad12-d9d2-45e4-924c-e4e414709ee7:
+    hostname: 172.20.20.24
+bo-lab-router:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.7
-7c84783b-7761-4b98-b5e5-c0767188271e:
+    hostname: 172.20.20.38
+bo-lab-sw:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.6
-9f5d1a53-1998-43a4-821e-defac444b6da:
+    hostname: 172.20.20.13
+bo-lab-web:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.5
-b1e15328-af2f-426e-8ed9-78ad57029c64:
+    hostname: 172.20.20.20
+bo-lab-ws-1:
     username: 
     password: 
     platform: linux
-    hostname: 172.20.20.8
+    hostname: 172.20.20.19
+bo-lab-ws-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.26
+bo-router-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.40
+bo-sw-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.63
+bo-ws-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.29
+bo-ws-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.57
+bo-ws-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.48
+bo-ws-4:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.16
+bo-ws-5:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.47
+den-fw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.61
+den-ot-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.12
+den-ot-sw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.18
+den-plc-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.52
+den-plc-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.39
+den-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.10
+den-sw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.56
+den-web:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.42
+den-ws-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.46
+den-ws-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.27
+if-dmz-file:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.62
+if-dmz-fw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.64
+if-dmz-sw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.51
+if-dmz-web:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.55
+if-fw-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.30
+if-ot-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.35
+if-ot-sw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.59
+if-ot-ws:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.36
+if-plc-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.33
+if-plc-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.49
+if-plc-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.65
+if-router-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.14
+if-sw-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.15
+if-web-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.22
+if-ws-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.44
+if-ws-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.17
+if-ws-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.21
+pdx-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.45
+pdx-sw:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.53
+pdx-ws-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.28
+pdx-ws-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.43
+pdx-ws-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.54
+slc-file-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.50
+slc-file-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.58
+slc-fw-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.60
+slc-router-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.11
+slc-router-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.37
+slc-sw-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.34
+slc-sw-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.31
+slc-web-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.23
+slc-web-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.32
+slc-web-3:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.41
+slc-web-4:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.25
