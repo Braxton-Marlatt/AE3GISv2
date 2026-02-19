@@ -6,7 +6,7 @@
       "prefix": "clab",
       "mgmt": {
         "network": "clab",
-        "bridge": "br-d02300cf6174",
+        "bridge": "br-ca3ce39c1f24",
         "ipv4-subnet": "172.20.20.0/24",
         "ipv4-gw": "172.20.20.1",
         "ipv6-subnet": "3fff:172:20:20::/64",
@@ -15,7 +15,7 @@
       }
     }
   },
-  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKrl+glB509mUULyECTuYMh1Bl6rESsxm0b69JqLI07n"],
+  "ssh-pub-keys": [],
   "nodes": {
     "bo-file-1": {
       "index": "0",
@@ -23,26 +23,26 @@
       "longname": "clab-ae3gis-network-bo-file-1",
       "fqdn": "bo-file-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-file-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-file-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.24",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::18",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-file-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-file-1",
         "clab-node-longname": "clab-ae3gis-network-bo-file-1",
         "clab-node-name": "bo-file-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -54,26 +54,26 @@
       "longname": "clab-ae3gis-network-bo-lab-router",
       "fqdn": "bo-lab-router.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-router",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-router",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.38",
+      "mgmt-ipv4-address": "172.20.20.5",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::26",
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-router",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-router",
         "clab-node-longname": "clab-ae3gis-network-bo-lab-router",
         "clab-node-name": "bo-lab-router",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -85,26 +85,26 @@
       "longname": "clab-ae3gis-network-bo-lab-sw",
       "fqdn": "bo-lab-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.13",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::d",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-sw",
         "clab-node-longname": "clab-ae3gis-network-bo-lab-sw",
         "clab-node-name": "bo-lab-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -116,26 +116,26 @@
       "longname": "clab-ae3gis-network-bo-lab-web",
       "fqdn": "bo-lab-web.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-web",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-web",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.20",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::14",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-web",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-web",
         "clab-node-longname": "clab-ae3gis-network-bo-lab-web",
         "clab-node-name": "bo-lab-web",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -147,26 +147,26 @@
       "longname": "clab-ae3gis-network-bo-lab-ws-1",
       "fqdn": "bo-lab-ws-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.19",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::13",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-1",
         "clab-node-longname": "clab-ae3gis-network-bo-lab-ws-1",
         "clab-node-name": "bo-lab-ws-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -178,26 +178,26 @@
       "longname": "clab-ae3gis-network-bo-lab-ws-2",
       "fqdn": "bo-lab-ws-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.26",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1a",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-lab-ws-2",
         "clab-node-longname": "clab-ae3gis-network-bo-lab-ws-2",
         "clab-node-name": "bo-lab-ws-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -209,26 +209,26 @@
       "longname": "clab-ae3gis-network-bo-router-1",
       "fqdn": "bo-router-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-router-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-router-1",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.40",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::28",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-router-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-router-1",
         "clab-node-longname": "clab-ae3gis-network-bo-router-1",
         "clab-node-name": "bo-router-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -240,26 +240,26 @@
       "longname": "clab-ae3gis-network-bo-sw-1",
       "fqdn": "bo-sw-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-sw-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-sw-1",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.63",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3f",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-sw-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-sw-1",
         "clab-node-longname": "clab-ae3gis-network-bo-sw-1",
         "clab-node-name": "bo-sw-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -271,26 +271,26 @@
       "longname": "clab-ae3gis-network-bo-ws-1",
       "fqdn": "bo-ws-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.29",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1d",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-1",
         "clab-node-longname": "clab-ae3gis-network-bo-ws-1",
         "clab-node-name": "bo-ws-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -302,26 +302,26 @@
       "longname": "clab-ae3gis-network-bo-ws-2",
       "fqdn": "bo-ws-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.57",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::39",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-2",
         "clab-node-longname": "clab-ae3gis-network-bo-ws-2",
         "clab-node-name": "bo-ws-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -333,26 +333,26 @@
       "longname": "clab-ae3gis-network-bo-ws-3",
       "fqdn": "bo-ws-3.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-3",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-3",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.48",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::30",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-3",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-3",
         "clab-node-longname": "clab-ae3gis-network-bo-ws-3",
         "clab-node-name": "bo-ws-3",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -364,26 +364,26 @@
       "longname": "clab-ae3gis-network-bo-ws-4",
       "fqdn": "bo-ws-4.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-4",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-4",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.16",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::10",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-4",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-4",
         "clab-node-longname": "clab-ae3gis-network-bo-ws-4",
         "clab-node-name": "bo-ws-4",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -395,26 +395,26 @@
       "longname": "clab-ae3gis-network-bo-ws-5",
       "fqdn": "bo-ws-5.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-5",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-5",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.47",
+      "mgmt-ipv4-address": "172.20.20.13",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2f",
+      "mgmt-ipv6-address": "3fff:172:20:20::d",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-5",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/bo-ws-5",
         "clab-node-longname": "clab-ae3gis-network-bo-ws-5",
         "clab-node-name": "bo-ws-5",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -426,26 +426,26 @@
       "longname": "clab-ae3gis-network-den-fw",
       "fqdn": "den-fw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-fw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-fw",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.61",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3d",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-fw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-fw",
         "clab-node-longname": "clab-ae3gis-network-den-fw",
         "clab-node-name": "den-fw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -457,26 +457,26 @@
       "longname": "clab-ae3gis-network-den-ot-router",
       "fqdn": "den-ot-router.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-router",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-router",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.12",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::c",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-router",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-router",
         "clab-node-longname": "clab-ae3gis-network-den-ot-router",
         "clab-node-name": "den-ot-router",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -488,26 +488,26 @@
       "longname": "clab-ae3gis-network-den-ot-sw",
       "fqdn": "den-ot-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.18",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::12",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ot-sw",
         "clab-node-longname": "clab-ae3gis-network-den-ot-sw",
         "clab-node-name": "den-ot-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -519,26 +519,26 @@
       "longname": "clab-ae3gis-network-den-plc-1",
       "fqdn": "den-plc-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.52",
+      "mgmt-ipv4-address": "172.20.20.9",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::34",
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-1",
         "clab-node-longname": "clab-ae3gis-network-den-plc-1",
         "clab-node-name": "den-plc-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -550,26 +550,26 @@
       "longname": "clab-ae3gis-network-den-plc-2",
       "fqdn": "den-plc-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.39",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::27",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-plc-2",
         "clab-node-longname": "clab-ae3gis-network-den-plc-2",
         "clab-node-name": "den-plc-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -581,26 +581,26 @@
       "longname": "clab-ae3gis-network-den-router",
       "fqdn": "den-router.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-router",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-router",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.10",
+      "mgmt-ipv4-address": "172.20.20.16",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::a",
+      "mgmt-ipv6-address": "3fff:172:20:20::10",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-router",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-router",
         "clab-node-longname": "clab-ae3gis-network-den-router",
         "clab-node-name": "den-router",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -612,26 +612,26 @@
       "longname": "clab-ae3gis-network-den-sw",
       "fqdn": "den-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.56",
+      "mgmt-ipv4-address": "172.20.20.17",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::38",
+      "mgmt-ipv6-address": "3fff:172:20:20::11",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-sw",
         "clab-node-longname": "clab-ae3gis-network-den-sw",
         "clab-node-name": "den-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -643,26 +643,26 @@
       "longname": "clab-ae3gis-network-den-web",
       "fqdn": "den-web.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-web",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-web",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.42",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2a",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-web",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-web",
         "clab-node-longname": "clab-ae3gis-network-den-web",
         "clab-node-name": "den-web",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -674,26 +674,26 @@
       "longname": "clab-ae3gis-network-den-ws-1",
       "fqdn": "den-ws-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.46",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2e",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-1",
         "clab-node-longname": "clab-ae3gis-network-den-ws-1",
         "clab-node-name": "den-ws-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -705,26 +705,26 @@
       "longname": "clab-ae3gis-network-den-ws-2",
       "fqdn": "den-ws-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.27",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1b",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/den-ws-2",
         "clab-node-longname": "clab-ae3gis-network-den-ws-2",
         "clab-node-name": "den-ws-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -736,26 +736,26 @@
       "longname": "clab-ae3gis-network-if-dmz-file",
       "fqdn": "if-dmz-file.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-file",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-file",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.62",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3e",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-file",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-file",
         "clab-node-longname": "clab-ae3gis-network-if-dmz-file",
         "clab-node-name": "if-dmz-file",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -767,26 +767,26 @@
       "longname": "clab-ae3gis-network-if-dmz-fw",
       "fqdn": "if-dmz-fw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-fw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-fw",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.64",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::40",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-fw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-fw",
         "clab-node-longname": "clab-ae3gis-network-if-dmz-fw",
         "clab-node-name": "if-dmz-fw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -798,26 +798,26 @@
       "longname": "clab-ae3gis-network-if-dmz-sw",
       "fqdn": "if-dmz-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.51",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::33",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-sw",
         "clab-node-longname": "clab-ae3gis-network-if-dmz-sw",
         "clab-node-name": "if-dmz-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -829,26 +829,26 @@
       "longname": "clab-ae3gis-network-if-dmz-web",
       "fqdn": "if-dmz-web.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-web",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-web",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.55",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::37",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-web",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-dmz-web",
         "clab-node-longname": "clab-ae3gis-network-if-dmz-web",
         "clab-node-name": "if-dmz-web",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -860,26 +860,26 @@
       "longname": "clab-ae3gis-network-if-fw-1",
       "fqdn": "if-fw-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-fw-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-fw-1",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.30",
+      "mgmt-ipv4-address": "172.20.20.4",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1e",
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-fw-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-fw-1",
         "clab-node-longname": "clab-ae3gis-network-if-fw-1",
         "clab-node-name": "if-fw-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -891,26 +891,26 @@
       "longname": "clab-ae3gis-network-if-ot-router",
       "fqdn": "if-ot-router.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-router",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-router",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.35",
+      "mgmt-ipv4-address": "172.20.20.11",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::23",
+      "mgmt-ipv6-address": "3fff:172:20:20::b",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-router",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-router",
         "clab-node-longname": "clab-ae3gis-network-if-ot-router",
         "clab-node-name": "if-ot-router",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -922,26 +922,26 @@
       "longname": "clab-ae3gis-network-if-ot-sw",
       "fqdn": "if-ot-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.59",
+      "mgmt-ipv4-address": "172.20.20.2",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3b",
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-sw",
         "clab-node-longname": "clab-ae3gis-network-if-ot-sw",
         "clab-node-name": "if-ot-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -953,26 +953,26 @@
       "longname": "clab-ae3gis-network-if-ot-ws",
       "fqdn": "if-ot-ws.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-ws",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-ws",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.36",
+      "mgmt-ipv4-address": "172.20.20.14",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::24",
+      "mgmt-ipv6-address": "3fff:172:20:20::e",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-ws",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ot-ws",
         "clab-node-longname": "clab-ae3gis-network-if-ot-ws",
         "clab-node-name": "if-ot-ws",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -984,26 +984,26 @@
       "longname": "clab-ae3gis-network-if-plc-1",
       "fqdn": "if-plc-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.33",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::21",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-1",
         "clab-node-longname": "clab-ae3gis-network-if-plc-1",
         "clab-node-name": "if-plc-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1015,26 +1015,26 @@
       "longname": "clab-ae3gis-network-if-plc-2",
       "fqdn": "if-plc-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.49",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::31",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-2",
         "clab-node-longname": "clab-ae3gis-network-if-plc-2",
         "clab-node-name": "if-plc-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1046,26 +1046,26 @@
       "longname": "clab-ae3gis-network-if-plc-3",
       "fqdn": "if-plc-3.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-3",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-3",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.65",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::41",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-3",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-plc-3",
         "clab-node-longname": "clab-ae3gis-network-if-plc-3",
         "clab-node-name": "if-plc-3",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1077,26 +1077,26 @@
       "longname": "clab-ae3gis-network-if-router-1",
       "fqdn": "if-router-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-router-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-router-1",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.14",
+      "mgmt-ipv4-address": "172.20.20.10",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::e",
+      "mgmt-ipv6-address": "3fff:172:20:20::a",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-router-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-router-1",
         "clab-node-longname": "clab-ae3gis-network-if-router-1",
         "clab-node-name": "if-router-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1108,7 +1108,7 @@
       "longname": "clab-ae3gis-network-if-sw-1",
       "fqdn": "if-sw-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-sw-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-sw-1",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
@@ -1119,15 +1119,15 @@
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-sw-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-sw-1",
         "clab-node-longname": "clab-ae3gis-network-if-sw-1",
         "clab-node-name": "if-sw-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1139,26 +1139,26 @@
       "longname": "clab-ae3gis-network-if-web-1",
       "fqdn": "if-web-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-web-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-web-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.22",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::16",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-web-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-web-1",
         "clab-node-longname": "clab-ae3gis-network-if-web-1",
         "clab-node-name": "if-web-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1170,26 +1170,26 @@
       "longname": "clab-ae3gis-network-if-ws-1",
       "fqdn": "if-ws-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.44",
+      "mgmt-ipv4-address": "172.20.20.12",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2c",
+      "mgmt-ipv6-address": "3fff:172:20:20::c",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-1",
         "clab-node-longname": "clab-ae3gis-network-if-ws-1",
         "clab-node-name": "if-ws-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1201,26 +1201,26 @@
       "longname": "clab-ae3gis-network-if-ws-2",
       "fqdn": "if-ws-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.17",
+      "mgmt-ipv4-address": "172.20.20.6",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::11",
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-2",
         "clab-node-longname": "clab-ae3gis-network-if-ws-2",
         "clab-node-name": "if-ws-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1232,26 +1232,26 @@
       "longname": "clab-ae3gis-network-if-ws-3",
       "fqdn": "if-ws-3.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-3",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-3",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.21",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::15",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-3",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/if-ws-3",
         "clab-node-longname": "clab-ae3gis-network-if-ws-3",
         "clab-node-name": "if-ws-3",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1263,26 +1263,26 @@
       "longname": "clab-ae3gis-network-pdx-router",
       "fqdn": "pdx-router.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-router",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-router",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.45",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2d",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-router",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-router",
         "clab-node-longname": "clab-ae3gis-network-pdx-router",
         "clab-node-name": "pdx-router",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1294,26 +1294,26 @@
       "longname": "clab-ae3gis-network-pdx-sw",
       "fqdn": "pdx-sw.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-sw",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-sw",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.53",
+      "mgmt-ipv4-address": "172.20.20.18",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::35",
+      "mgmt-ipv6-address": "3fff:172:20:20::12",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-sw",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-sw",
         "clab-node-longname": "clab-ae3gis-network-pdx-sw",
         "clab-node-name": "pdx-sw",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1325,26 +1325,26 @@
       "longname": "clab-ae3gis-network-pdx-ws-1",
       "fqdn": "pdx-ws-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.28",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1c",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-1",
         "clab-node-longname": "clab-ae3gis-network-pdx-ws-1",
         "clab-node-name": "pdx-ws-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1356,26 +1356,26 @@
       "longname": "clab-ae3gis-network-pdx-ws-2",
       "fqdn": "pdx-ws-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.43",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::2b",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-2",
         "clab-node-longname": "clab-ae3gis-network-pdx-ws-2",
         "clab-node-name": "pdx-ws-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1387,26 +1387,26 @@
       "longname": "clab-ae3gis-network-pdx-ws-3",
       "fqdn": "pdx-ws-3.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-3",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-3",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.54",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::36",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-3",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/pdx-ws-3",
         "clab-node-longname": "clab-ae3gis-network-pdx-ws-3",
         "clab-node-name": "pdx-ws-3",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1418,26 +1418,26 @@
       "longname": "clab-ae3gis-network-slc-file-1",
       "fqdn": "slc-file-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.50",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::32",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-1",
         "clab-node-longname": "clab-ae3gis-network-slc-file-1",
         "clab-node-name": "slc-file-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1449,26 +1449,26 @@
       "longname": "clab-ae3gis-network-slc-file-2",
       "fqdn": "slc-file-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.58",
+      "mgmt-ipv4-address": "172.20.20.8",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3a",
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-file-2",
         "clab-node-longname": "clab-ae3gis-network-slc-file-2",
         "clab-node-name": "slc-file-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1480,26 +1480,26 @@
       "longname": "clab-ae3gis-network-slc-fw-1",
       "fqdn": "slc-fw-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-fw-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-fw-1",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.60",
+      "mgmt-ipv4-address": "172.20.20.3",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::3c",
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-fw-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-fw-1",
         "clab-node-longname": "clab-ae3gis-network-slc-fw-1",
         "clab-node-name": "slc-fw-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1511,26 +1511,26 @@
       "longname": "clab-ae3gis-network-slc-router-1",
       "fqdn": "slc-router-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-1",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.11",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::b",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-1",
         "clab-node-longname": "clab-ae3gis-network-slc-router-1",
         "clab-node-name": "slc-router-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1542,26 +1542,26 @@
       "longname": "clab-ae3gis-network-slc-router-2",
       "fqdn": "slc-router-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-2",
       "kind": "linux",
       "image": "frrouting/frr:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.37",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::25",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-router-2",
         "clab-node-longname": "clab-ae3gis-network-slc-router-2",
         "clab-node-name": "slc-router-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1573,26 +1573,26 @@
       "longname": "clab-ae3gis-network-slc-sw-1",
       "fqdn": "slc-sw-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-1",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.34",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::22",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-1",
         "clab-node-longname": "clab-ae3gis-network-slc-sw-1",
         "clab-node-name": "slc-sw-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1604,26 +1604,26 @@
       "longname": "clab-ae3gis-network-slc-sw-2",
       "fqdn": "slc-sw-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-2",
       "kind": "linux",
       "image": "tollan/openvswitch-xp:v0.1",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.31",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::1f",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-sw-2",
         "clab-node-longname": "clab-ae3gis-network-slc-sw-2",
         "clab-node-name": "slc-sw-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1635,26 +1635,26 @@
       "longname": "clab-ae3gis-network-slc-web-1",
       "fqdn": "slc-web-1.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-1",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-1",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.23",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::17",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-1",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-1",
         "clab-node-longname": "clab-ae3gis-network-slc-web-1",
         "clab-node-name": "slc-web-1",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1666,26 +1666,26 @@
       "longname": "clab-ae3gis-network-slc-web-2",
       "fqdn": "slc-web-2.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-2",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-2",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.32",
+      "mgmt-ipv4-address": "172.20.20.7",
       "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::20",
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
       "mgmt-ipv6-prefix-length": 64,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-2",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-2",
         "clab-node-longname": "clab-ae3gis-network-slc-web-2",
         "clab-node-name": "slc-web-2",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1697,26 +1697,26 @@
       "longname": "clab-ae3gis-network-slc-web-3",
       "fqdn": "slc-web-3.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-3",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-3",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.41",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::29",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-3",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-3",
         "clab-node-longname": "clab-ae3gis-network-slc-web-3",
         "clab-node-name": "slc-web-3",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1728,26 +1728,26 @@
       "longname": "clab-ae3gis-network-slc-web-4",
       "fqdn": "slc-web-4.ae3gis-network.io",
       "group": "",
-      "labdir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-4",
+      "labdir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-4",
       "kind": "linux",
       "image": "alpine:latest",
       "mgmt-net": "",
       "mgmt-intf": "",
-      "mgmt-ipv4-address": "172.20.20.25",
-      "mgmt-ipv4-prefix-length": 24,
-      "mgmt-ipv6-address": "3fff:172:20:20::19",
-      "mgmt-ipv6-prefix-length": 64,
+      "mgmt-ipv4-address": "",
+      "mgmt-ipv4-prefix-length": 0,
+      "mgmt-ipv6-address": "",
+      "mgmt-ipv6-prefix-length": 0,
       "mac-address": "",
       "labels": {
-        "clab-mgmt-net-bridge": "br-d02300cf6174",
+        "clab-mgmt-net-bridge": "br-ca3ce39c1f24",
         "clab-node-group": "",
         "clab-node-kind": "linux",
-        "clab-node-lab-dir": "/home/brax/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-4",
+        "clab-node-lab-dir": "/home/ae3gis/AE3GISv2/backend/clab-workdir/clab-ae3gis-network/slc-web-4",
         "clab-node-longname": "clab-ae3gis-network-slc-web-4",
         "clab-node-name": "slc-web-4",
         "clab-node-type": "",
-        "clab-owner": "brax",
-        "clab-topo-file": "/home/brax/AE3GISv2/backend/clab-workdir/4aee30340d8049c39f9fb93d653db812.clab.yml",
+        "clab-owner": "ae3gis",
+        "clab-topo-file": "/home/ae3gis/AE3GISv2/backend/clab-workdir/fa6b96674eda4795a49f43da0cd7d49f.clab.yml",
         "containerlab": "ae3gis-network"
       },
       "port-bindings": [
@@ -1760,13 +1760,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:18:43:7d",
+          "mac": "aa:c1:ab:81:48:85",
           "peer": "z"
         },
         "z": {
           "node": "if-sw-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:e1:c1:ac",
+          "mac": "aa:c1:ab:48:02:b1",
           "peer": "a"
         }
       }
@@ -1776,13 +1776,13 @@
         "a": {
           "node": "if-sw-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:4a:40:44",
+          "mac": "aa:c1:ab:56:2e:33",
           "peer": "z"
         },
         "z": {
           "node": "if-fw-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:90:30:c4",
+          "mac": "aa:c1:ab:5d:85:cc",
           "peer": "a"
         }
       }
@@ -1792,13 +1792,13 @@
         "a": {
           "node": "if-sw-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:d0:fa:62",
+          "mac": "aa:c1:ab:83:c8:09",
           "peer": "z"
         },
         "z": {
           "node": "if-web-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:70:32:87",
+          "mac": "aa:c1:ab:89:98:74",
           "peer": "a"
         }
       }
@@ -1808,13 +1808,13 @@
         "a": {
           "node": "if-sw-1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:a8:10:2b",
+          "mac": "aa:c1:ab:72:63:98",
           "peer": "z"
         },
         "z": {
           "node": "if-ws-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:c5:14:9a",
+          "mac": "aa:c1:ab:a0:ad:b1",
           "peer": "a"
         }
       }
@@ -1824,13 +1824,13 @@
         "a": {
           "node": "if-sw-1",
           "interface": "eth5",
-          "mac": "aa:c1:ab:98:85:a3",
+          "mac": "aa:c1:ab:c2:20:bd",
           "peer": "z"
         },
         "z": {
           "node": "if-ws-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:50:36:1b",
+          "mac": "aa:c1:ab:9f:28:93",
           "peer": "a"
         }
       }
@@ -1840,13 +1840,13 @@
         "a": {
           "node": "if-sw-1",
           "interface": "eth6",
-          "mac": "aa:c1:ab:54:73:a5",
+          "mac": "aa:c1:ab:45:aa:08",
           "peer": "z"
         },
         "z": {
           "node": "if-ws-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:45:c3:c0",
+          "mac": "aa:c1:ab:7d:f2:19",
           "peer": "a"
         }
       }
@@ -1856,13 +1856,13 @@
         "a": {
           "node": "if-ot-router",
           "interface": "eth1",
-          "mac": "aa:c1:ab:6e:a8:a8",
+          "mac": "aa:c1:ab:1d:24:1b",
           "peer": "z"
         },
         "z": {
           "node": "if-ot-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:5b:ce:bf",
+          "mac": "aa:c1:ab:3c:70:7d",
           "peer": "a"
         }
       }
@@ -1872,13 +1872,13 @@
         "a": {
           "node": "if-ot-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:aa:ce:34",
+          "mac": "aa:c1:ab:2b:4c:95",
           "peer": "z"
         },
         "z": {
           "node": "if-plc-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:d3:23:a5",
+          "mac": "aa:c1:ab:10:ce:53",
           "peer": "a"
         }
       }
@@ -1888,13 +1888,13 @@
         "a": {
           "node": "if-ot-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:d9:57:94",
+          "mac": "aa:c1:ab:70:34:32",
           "peer": "z"
         },
         "z": {
           "node": "if-plc-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:a5:c8:f0",
+          "mac": "aa:c1:ab:99:51:36",
           "peer": "a"
         }
       }
@@ -1904,13 +1904,13 @@
         "a": {
           "node": "if-ot-sw",
           "interface": "eth4",
-          "mac": "aa:c1:ab:64:8b:52",
+          "mac": "aa:c1:ab:24:f2:84",
           "peer": "z"
         },
         "z": {
           "node": "if-plc-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:09:8d:dc",
+          "mac": "aa:c1:ab:2d:b2:c7",
           "peer": "a"
         }
       }
@@ -1920,13 +1920,13 @@
         "a": {
           "node": "if-ot-sw",
           "interface": "eth5",
-          "mac": "aa:c1:ab:91:40:57",
+          "mac": "aa:c1:ab:47:7d:c7",
           "peer": "z"
         },
         "z": {
           "node": "if-ot-ws",
           "interface": "eth1",
-          "mac": "aa:c1:ab:7b:c5:fc",
+          "mac": "aa:c1:ab:e8:e7:ae",
           "peer": "a"
         }
       }
@@ -1936,13 +1936,13 @@
         "a": {
           "node": "if-dmz-fw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:70:9e:64",
+          "mac": "aa:c1:ab:1f:4d:dd",
           "peer": "z"
         },
         "z": {
           "node": "if-dmz-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:bd:6a:d3",
+          "mac": "aa:c1:ab:a2:80:08",
           "peer": "a"
         }
       }
@@ -1952,13 +1952,13 @@
         "a": {
           "node": "if-dmz-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:6b:45:8d",
+          "mac": "aa:c1:ab:46:96:1b",
           "peer": "z"
         },
         "z": {
           "node": "if-dmz-web",
           "interface": "eth1",
-          "mac": "aa:c1:ab:a0:d2:32",
+          "mac": "aa:c1:ab:0b:e9:8b",
           "peer": "a"
         }
       }
@@ -1968,13 +1968,13 @@
         "a": {
           "node": "if-dmz-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:9d:ac:9d",
+          "mac": "aa:c1:ab:c8:5c:94",
           "peer": "z"
         },
         "z": {
           "node": "if-dmz-file",
           "interface": "eth1",
-          "mac": "aa:c1:ab:49:f6:6b",
+          "mac": "aa:c1:ab:79:f4:87",
           "peer": "a"
         }
       }
@@ -1984,13 +1984,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:de:e8:79",
+          "mac": "aa:c1:ab:c4:fe:6a",
           "peer": "z"
         },
         "z": {
           "node": "if-dmz-fw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:d4:14:c8",
+          "mac": "aa:c1:ab:6d:05:69",
           "peer": "a"
         }
       }
@@ -2000,13 +2000,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:52:58:de",
+          "mac": "aa:c1:ab:82:cd:b5",
           "peer": "z"
         },
         "z": {
           "node": "if-ot-router",
           "interface": "eth2",
-          "mac": "aa:c1:ab:c0:a0:bc",
+          "mac": "aa:c1:ab:e6:fa:81",
           "peer": "a"
         }
       }
@@ -2016,13 +2016,13 @@
         "a": {
           "node": "bo-router-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:db:c9:4e",
+          "mac": "aa:c1:ab:e3:a1:eb",
           "peer": "z"
         },
         "z": {
           "node": "bo-sw-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:9f:6c:22",
+          "mac": "aa:c1:ab:f0:d7:8c",
           "peer": "a"
         }
       }
@@ -2032,13 +2032,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:80:8d:70",
+          "mac": "aa:c1:ab:1b:c2:6a",
           "peer": "z"
         },
         "z": {
           "node": "bo-file-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:fa:31:e9",
+          "mac": "aa:c1:ab:0c:94:7e",
           "peer": "a"
         }
       }
@@ -2048,13 +2048,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:81:a9:5c",
+          "mac": "aa:c1:ab:5a:03:d2",
           "peer": "z"
         },
         "z": {
           "node": "bo-ws-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:06:77:cb",
+          "mac": "aa:c1:ab:99:25:8e",
           "peer": "a"
         }
       }
@@ -2064,13 +2064,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:94:20:7c",
+          "mac": "aa:c1:ab:d1:55:10",
           "peer": "z"
         },
         "z": {
           "node": "bo-ws-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:b6:54:dd",
+          "mac": "aa:c1:ab:a4:9c:7e",
           "peer": "a"
         }
       }
@@ -2080,13 +2080,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth5",
-          "mac": "aa:c1:ab:53:a9:33",
+          "mac": "aa:c1:ab:d0:c0:0f",
           "peer": "z"
         },
         "z": {
           "node": "bo-ws-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:76:2b:39",
+          "mac": "aa:c1:ab:f2:2c:fd",
           "peer": "a"
         }
       }
@@ -2096,13 +2096,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth6",
-          "mac": "aa:c1:ab:00:03:69",
+          "mac": "aa:c1:ab:52:c3:fb",
           "peer": "z"
         },
         "z": {
           "node": "bo-ws-4",
           "interface": "eth1",
-          "mac": "aa:c1:ab:e3:d1:14",
+          "mac": "aa:c1:ab:c2:e9:3c",
           "peer": "a"
         }
       }
@@ -2112,13 +2112,13 @@
         "a": {
           "node": "bo-sw-1",
           "interface": "eth7",
-          "mac": "aa:c1:ab:ff:e6:68",
+          "mac": "aa:c1:ab:aa:19:28",
           "peer": "z"
         },
         "z": {
           "node": "bo-ws-5",
           "interface": "eth1",
-          "mac": "aa:c1:ab:6c:1a:fe",
+          "mac": "aa:c1:ab:15:5a:8e",
           "peer": "a"
         }
       }
@@ -2128,13 +2128,13 @@
         "a": {
           "node": "bo-lab-router",
           "interface": "eth1",
-          "mac": "aa:c1:ab:87:8d:45",
+          "mac": "aa:c1:ab:eb:0f:31",
           "peer": "z"
         },
         "z": {
           "node": "bo-lab-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:ad:cc:8c",
+          "mac": "aa:c1:ab:2e:3f:32",
           "peer": "a"
         }
       }
@@ -2144,13 +2144,13 @@
         "a": {
           "node": "bo-lab-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:17:06:be",
+          "mac": "aa:c1:ab:77:01:b9",
           "peer": "z"
         },
         "z": {
           "node": "bo-lab-web",
           "interface": "eth1",
-          "mac": "aa:c1:ab:3f:1a:49",
+          "mac": "aa:c1:ab:93:32:87",
           "peer": "a"
         }
       }
@@ -2160,13 +2160,13 @@
         "a": {
           "node": "bo-lab-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:67:e6:72",
+          "mac": "aa:c1:ab:39:3f:bd",
           "peer": "z"
         },
         "z": {
           "node": "bo-lab-ws-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:43:b8:8e",
+          "mac": "aa:c1:ab:d8:71:09",
           "peer": "a"
         }
       }
@@ -2176,13 +2176,13 @@
         "a": {
           "node": "bo-lab-sw",
           "interface": "eth4",
-          "mac": "aa:c1:ab:48:bc:18",
+          "mac": "aa:c1:ab:a4:74:44",
           "peer": "z"
         },
         "z": {
           "node": "bo-lab-ws-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:66:63:36",
+          "mac": "aa:c1:ab:d8:e8:93",
           "peer": "a"
         }
       }
@@ -2192,13 +2192,13 @@
         "a": {
           "node": "bo-router-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:0d:5f:a2",
+          "mac": "aa:c1:ab:9f:11:97",
           "peer": "z"
         },
         "z": {
           "node": "bo-lab-router",
           "interface": "eth2",
-          "mac": "aa:c1:ab:af:65:5c",
+          "mac": "aa:c1:ab:2b:b9:bd",
           "peer": "a"
         }
       }
@@ -2208,13 +2208,13 @@
         "a": {
           "node": "slc-router-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:3c:b6:50",
+          "mac": "aa:c1:ab:d6:15:ee",
           "peer": "z"
         },
         "z": {
           "node": "slc-sw-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:84:55:58",
+          "mac": "aa:c1:ab:89:0a:27",
           "peer": "a"
         }
       }
@@ -2224,13 +2224,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:8d:d0:16",
+          "mac": "aa:c1:ab:9d:d7:c3",
           "peer": "z"
         },
         "z": {
           "node": "slc-router-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:81:36:ab",
+          "mac": "aa:c1:ab:cb:d8:e9",
           "peer": "a"
         }
       }
@@ -2240,13 +2240,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:3b:f5:24",
+          "mac": "aa:c1:ab:94:8c:42",
           "peer": "z"
         },
         "z": {
           "node": "slc-fw-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:b2:e4:9a",
+          "mac": "aa:c1:ab:0a:4e:50",
           "peer": "a"
         }
       }
@@ -2256,13 +2256,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:0a:0d:c9",
+          "mac": "aa:c1:ab:e1:16:5e",
           "peer": "z"
         },
         "z": {
           "node": "slc-web-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:cc:54:fd",
+          "mac": "aa:c1:ab:1d:8d:0b",
           "peer": "a"
         }
       }
@@ -2272,13 +2272,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth5",
-          "mac": "aa:c1:ab:2c:49:9f",
+          "mac": "aa:c1:ab:a3:60:2a",
           "peer": "z"
         },
         "z": {
           "node": "slc-web-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:0b:5e:ef",
+          "mac": "aa:c1:ab:f6:19:70",
           "peer": "a"
         }
       }
@@ -2288,13 +2288,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth6",
-          "mac": "aa:c1:ab:48:86:be",
+          "mac": "aa:c1:ab:4a:1e:58",
           "peer": "z"
         },
         "z": {
           "node": "slc-file-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:c8:98:6f",
+          "mac": "aa:c1:ab:c5:25:eb",
           "peer": "a"
         }
       }
@@ -2304,13 +2304,13 @@
         "a": {
           "node": "slc-sw-1",
           "interface": "eth7",
-          "mac": "aa:c1:ab:94:15:37",
+          "mac": "aa:c1:ab:51:4c:ce",
           "peer": "z"
         },
         "z": {
           "node": "slc-sw-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:27:fc:b8",
+          "mac": "aa:c1:ab:87:55:36",
           "peer": "a"
         }
       }
@@ -2320,13 +2320,13 @@
         "a": {
           "node": "slc-sw-2",
           "interface": "eth2",
-          "mac": "aa:c1:ab:2a:19:23",
+          "mac": "aa:c1:ab:a9:4d:22",
           "peer": "z"
         },
         "z": {
           "node": "slc-web-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:54:76:46",
+          "mac": "aa:c1:ab:b0:a6:52",
           "peer": "a"
         }
       }
@@ -2336,13 +2336,13 @@
         "a": {
           "node": "slc-sw-2",
           "interface": "eth3",
-          "mac": "aa:c1:ab:38:a2:d5",
+          "mac": "aa:c1:ab:de:25:f2",
           "peer": "z"
         },
         "z": {
           "node": "slc-web-4",
           "interface": "eth1",
-          "mac": "aa:c1:ab:f7:81:52",
+          "mac": "aa:c1:ab:c5:88:85",
           "peer": "a"
         }
       }
@@ -2352,13 +2352,13 @@
         "a": {
           "node": "slc-sw-2",
           "interface": "eth4",
-          "mac": "aa:c1:ab:f9:09:b0",
+          "mac": "aa:c1:ab:63:e3:c5",
           "peer": "z"
         },
         "z": {
           "node": "slc-file-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:0e:24:24",
+          "mac": "aa:c1:ab:a6:bf:a9",
           "peer": "a"
         }
       }
@@ -2368,13 +2368,13 @@
         "a": {
           "node": "pdx-router",
           "interface": "eth1",
-          "mac": "aa:c1:ab:42:52:3a",
+          "mac": "aa:c1:ab:14:ac:96",
           "peer": "z"
         },
         "z": {
           "node": "pdx-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:89:55:4e",
+          "mac": "aa:c1:ab:de:0f:90",
           "peer": "a"
         }
       }
@@ -2384,13 +2384,13 @@
         "a": {
           "node": "pdx-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:72:bc:14",
+          "mac": "aa:c1:ab:53:0d:8f",
           "peer": "z"
         },
         "z": {
           "node": "pdx-ws-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:4e:24:aa",
+          "mac": "aa:c1:ab:a4:3a:1c",
           "peer": "a"
         }
       }
@@ -2400,13 +2400,13 @@
         "a": {
           "node": "pdx-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:73:92:0c",
+          "mac": "aa:c1:ab:97:10:6e",
           "peer": "z"
         },
         "z": {
           "node": "pdx-ws-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:b4:28:99",
+          "mac": "aa:c1:ab:f6:22:5b",
           "peer": "a"
         }
       }
@@ -2416,13 +2416,13 @@
         "a": {
           "node": "pdx-sw",
           "interface": "eth4",
-          "mac": "aa:c1:ab:7b:22:86",
+          "mac": "aa:c1:ab:fd:38:20",
           "peer": "z"
         },
         "z": {
           "node": "pdx-ws-3",
           "interface": "eth1",
-          "mac": "aa:c1:ab:8a:4e:ef",
+          "mac": "aa:c1:ab:84:d0:b6",
           "peer": "a"
         }
       }
@@ -2432,13 +2432,13 @@
         "a": {
           "node": "den-router",
           "interface": "eth1",
-          "mac": "aa:c1:ab:05:8d:86",
+          "mac": "aa:c1:ab:87:b6:36",
           "peer": "z"
         },
         "z": {
           "node": "den-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:3d:44:66",
+          "mac": "aa:c1:ab:64:55:2d",
           "peer": "a"
         }
       }
@@ -2448,13 +2448,13 @@
         "a": {
           "node": "den-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:97:fd:39",
+          "mac": "aa:c1:ab:4c:da:ba",
           "peer": "z"
         },
         "z": {
           "node": "den-fw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:00:ae:04",
+          "mac": "aa:c1:ab:b6:a7:da",
           "peer": "a"
         }
       }
@@ -2464,13 +2464,13 @@
         "a": {
           "node": "den-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:42:0d:c5",
+          "mac": "aa:c1:ab:29:9f:62",
           "peer": "z"
         },
         "z": {
           "node": "den-web",
           "interface": "eth1",
-          "mac": "aa:c1:ab:8d:94:a4",
+          "mac": "aa:c1:ab:4f:a5:3e",
           "peer": "a"
         }
       }
@@ -2480,13 +2480,13 @@
         "a": {
           "node": "den-sw",
           "interface": "eth4",
-          "mac": "aa:c1:ab:cf:33:ef",
+          "mac": "aa:c1:ab:5a:25:c9",
           "peer": "z"
         },
         "z": {
           "node": "den-ws-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:59:d1:54",
+          "mac": "aa:c1:ab:a6:d3:f3",
           "peer": "a"
         }
       }
@@ -2496,13 +2496,13 @@
         "a": {
           "node": "den-sw",
           "interface": "eth5",
-          "mac": "aa:c1:ab:cf:09:6e",
+          "mac": "aa:c1:ab:3c:1e:96",
           "peer": "z"
         },
         "z": {
           "node": "den-ws-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:10:a6:54",
+          "mac": "aa:c1:ab:89:39:29",
           "peer": "a"
         }
       }
@@ -2512,13 +2512,13 @@
         "a": {
           "node": "den-ot-router",
           "interface": "eth1",
-          "mac": "aa:c1:ab:59:85:af",
+          "mac": "aa:c1:ab:4b:7d:38",
           "peer": "z"
         },
         "z": {
           "node": "den-ot-sw",
           "interface": "eth1",
-          "mac": "aa:c1:ab:7b:47:65",
+          "mac": "aa:c1:ab:27:f7:85",
           "peer": "a"
         }
       }
@@ -2528,13 +2528,13 @@
         "a": {
           "node": "den-ot-sw",
           "interface": "eth2",
-          "mac": "aa:c1:ab:ea:6e:ca",
+          "mac": "aa:c1:ab:7c:64:72",
           "peer": "z"
         },
         "z": {
           "node": "den-plc-1",
           "interface": "eth1",
-          "mac": "aa:c1:ab:8a:5a:55",
+          "mac": "aa:c1:ab:95:86:79",
           "peer": "a"
         }
       }
@@ -2544,13 +2544,13 @@
         "a": {
           "node": "den-ot-sw",
           "interface": "eth3",
-          "mac": "aa:c1:ab:28:2e:e9",
+          "mac": "aa:c1:ab:58:e6:a5",
           "peer": "z"
         },
         "z": {
           "node": "den-plc-2",
           "interface": "eth1",
-          "mac": "aa:c1:ab:a5:5e:47",
+          "mac": "aa:c1:ab:a4:c1:80",
           "peer": "a"
         }
       }
@@ -2560,13 +2560,13 @@
         "a": {
           "node": "den-router",
           "interface": "eth2",
-          "mac": "aa:c1:ab:53:f3:80",
+          "mac": "aa:c1:ab:58:ba:a4",
           "peer": "z"
         },
         "z": {
           "node": "den-ot-router",
           "interface": "eth2",
-          "mac": "aa:c1:ab:c9:62:9c",
+          "mac": "aa:c1:ab:5b:b2:a0",
           "peer": "a"
         }
       }
@@ -2576,13 +2576,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:42:63:77",
+          "mac": "aa:c1:ab:58:0c:b0",
           "peer": "z"
         },
         "z": {
           "node": "bo-router-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:d4:ae:0a",
+          "mac": "aa:c1:ab:c3:c2:38",
           "peer": "a"
         }
       }
@@ -2592,13 +2592,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth5",
-          "mac": "aa:c1:ab:39:40:70",
+          "mac": "aa:c1:ab:ec:e6:f8",
           "peer": "z"
         },
         "z": {
           "node": "slc-router-1",
           "interface": "eth2",
-          "mac": "aa:c1:ab:80:34:5f",
+          "mac": "aa:c1:ab:e5:82:63",
           "peer": "a"
         }
       }
@@ -2608,13 +2608,13 @@
         "a": {
           "node": "if-router-1",
           "interface": "eth6",
-          "mac": "aa:c1:ab:92:98:ed",
+          "mac": "aa:c1:ab:f0:61:b1",
           "peer": "z"
         },
         "z": {
           "node": "den-router",
           "interface": "eth3",
-          "mac": "aa:c1:ab:f2:bf:13",
+          "mac": "aa:c1:ab:2a:3b:f5",
           "peer": "a"
         }
       }
@@ -2624,13 +2624,13 @@
         "a": {
           "node": "bo-router-1",
           "interface": "eth4",
-          "mac": "aa:c1:ab:fb:94:48",
+          "mac": "aa:c1:ab:bb:ff:a5",
           "peer": "z"
         },
         "z": {
           "node": "pdx-router",
           "interface": "eth2",
-          "mac": "aa:c1:ab:8a:67:47",
+          "mac": "aa:c1:ab:f1:87:68",
           "peer": "a"
         }
       }
@@ -2640,13 +2640,13 @@
         "a": {
           "node": "slc-router-1",
           "interface": "eth3",
-          "mac": "aa:c1:ab:79:22:f4",
+          "mac": "aa:c1:ab:cb:02:65",
           "peer": "z"
         },
         "z": {
           "node": "den-router",
           "interface": "eth4",
-          "mac": "aa:c1:ab:ff:38:26",
+          "mac": "aa:c1:ab:fa:8a:5b",
           "peer": "a"
         }
       }
