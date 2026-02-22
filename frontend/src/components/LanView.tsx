@@ -42,9 +42,12 @@ interface LanViewProps {
   subnet: Subnet;
   siteId: string;
   onSelectContainer: (container: Container) => void;
+  onOpenTerminal: (container: Container) => void;
+  onDeselect: () => void;
+  readOnly?: boolean;
 }
 
-export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
+export function LanView({ subnet, siteId, onSelectContainer, onOpenTerminal, onDeselect, readOnly }: LanViewProps) {
   const dispatch = useContext(TopologyDispatchContext);
   const { fitView } = useReactFlow();
 
@@ -62,6 +65,11 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
   const handleSelect = useCallback(
     (container: Container) => onSelectContainer(container),
     [onSelectContainer]
+  );
+
+  const handleOpenTerminal = useCallback(
+    (container: Container) => onOpenTerminal(container),
+    [onOpenTerminal]
   );
 
   const visibleContainers = useMemo(
@@ -114,7 +122,7 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
           if (existingNode) {
             return {
               ...existingNode,
-              data: { ...existingNode.data, container, onSelect: handleSelect },
+              data: { ...existingNode.data, container, onSelect: handleSelect, onOpenTerminal: handleOpenTerminal },
             };
           }
         }
@@ -128,6 +136,7 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
           data: {
             container,
             onSelect: handleSelect,
+            onOpenTerminal: handleOpenTerminal,
           },
         };
       });
@@ -382,15 +391,16 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
         minZoom={0.3}
         maxZoom={3}
         proOptions={{ hideAttribution: true }}
-        nodesDraggable={true}
-        nodesConnectable={true}
+        nodesDraggable={!readOnly}
+        nodesConnectable={!readOnly}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onPaneContextMenu={onPaneContextMenu}
-        onNodeContextMenu={onNodeContextMenu}
-        onEdgeContextMenu={onEdgeContextMenu}
-        onConnect={onConnect}
-        onNodeDragStop={onNodeDragStop}
+        onPaneContextMenu={readOnly ? undefined : onPaneContextMenu}
+        onNodeContextMenu={readOnly ? undefined : onNodeContextMenu}
+        onEdgeContextMenu={readOnly ? undefined : onEdgeContextMenu}
+        onConnect={readOnly ? undefined : onConnect}
+        onNodeDragStop={readOnly ? undefined : onNodeDragStop}
+        onPaneClick={onDeselect}
         connectionLineStyle={{ stroke: '#00d4ff', strokeWidth: 1.5, opacity: 0.6 }}
       >
         <Background
@@ -408,6 +418,7 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
         onBulkAdd={() => setBulkDialog(true)}
         layoutMode={layoutMode}
         onLayoutModeChange={setLayoutMode}
+        readOnly={readOnly}
       />
 
       <div className="scale-label">
@@ -423,45 +434,49 @@ export function LanView({ subnet, siteId, onSelectContainer }: LanViewProps) {
         />
       )}
 
-      <ContainerDialog
-        open={containerDialog.open}
-        onClose={() => setContainerDialog({ open: false })}
-        onSubmit={containerDialog.initial ? handleEditContainer : handleAddContainer}
-        initial={containerDialog.initial}
-        subnetCidr={subnet.cidr}
-        takenIps={takenIps}
-      />
+      {!readOnly && (
+        <>
+          <ContainerDialog
+            open={containerDialog.open}
+            onClose={() => setContainerDialog({ open: false })}
+            onSubmit={containerDialog.initial ? handleEditContainer : handleAddContainer}
+            initial={containerDialog.initial}
+            subnetCidr={subnet.cidr}
+            takenIps={takenIps}
+          />
 
-      <BulkContainerDialog
-        open={bulkDialog}
-        onClose={() => setBulkDialog(false)}
-        onSubmit={handleBulkAdd}
-        subnetCidr={subnet.cidr}
-        takenIps={takenIps}
-      />
+          <BulkContainerDialog
+            open={bulkDialog}
+            onClose={() => setBulkDialog(false)}
+            onSubmit={handleBulkAdd}
+            subnetCidr={subnet.cidr}
+            takenIps={takenIps}
+          />
 
-      <ConnectionDialog
-        open={connDialog}
-        onClose={() => setConnDialog(false)}
-        onSubmit={handleAddConnection}
-        availableNodes={connectionNodes}
-      />
+          <ConnectionDialog
+            open={connDialog}
+            onClose={() => setConnDialog(false)}
+            onSubmit={handleAddConnection}
+            availableNodes={connectionNodes}
+          />
 
-      <BulkConnectionDialog
-        open={bulkConnDialog}
-        onClose={() => setBulkConnDialog(false)}
-        onSubmit={handleBulkConnections}
-        availableNodes={connectionNodes}
-        existingConnections={subnet.connections}
-      />
+          <BulkConnectionDialog
+            open={bulkConnDialog}
+            onClose={() => setBulkConnDialog(false)}
+            onSubmit={handleBulkConnections}
+            availableNodes={connectionNodes}
+            existingConnections={subnet.connections}
+          />
 
-      <ConfirmDialog
-        open={!!deleteConfirm}
-        title="Delete Container"
-        message={`Delete "${deleteConfirm?.name}"? All connections to this container will be removed.`}
-        onConfirm={handleDeleteContainer}
-        onCancel={() => setDeleteConfirm(null)}
-      />
+          <ConfirmDialog
+            open={!!deleteConfirm}
+            title="Delete Container"
+            message={`Delete "${deleteConfirm?.name}"? All connections to this container will be removed.`}
+            onConfirm={handleDeleteContainer}
+            onCancel={() => setDeleteConfirm(null)}
+          />
+        </>
+      )}
     </div>
   );
 }

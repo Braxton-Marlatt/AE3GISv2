@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import type { KeyboardEvent } from 'react';
 import type { Container } from '../data/sampleTopology';
+import { wsUrl as buildWsUrl, getAuthToken } from '../api/client';
 
-interface TerminalOverlayProps {
-  container: Container;
+export interface TerminalOverlayProps {
+  sessions: Container[];
+  activeId: string;
+  onActivate: (id: string) => void;
+  onClose: (id: string) => void;
   backendId: string | null;
   deployStatus: string;
   topoName: string;
-  onClose: () => void;
 }
 
 type ConnStatus = 'connecting' | 'connected' | 'disconnected' | 'error';
@@ -19,13 +22,17 @@ const STATUS_COLOR: Record<ConnStatus, string> = {
   error: '#ff3344',
 };
 
-export function TerminalOverlay({
-  container,
-  backendId,
-  deployStatus,
-  topoName,
-  onClose,
-}: TerminalOverlayProps) {
+// ── Single terminal session (WS + I/O) ────────────────────────────
+
+interface TerminalSessionProps {
+  container: Container;
+  backendId: string | null;
+  deployStatus: string;
+  topoName: string;
+  active: boolean;
+}
+
+function TerminalSession({ container, backendId, deployStatus, active }: TerminalSessionProps) {
   const [lines, setLines] = useState<string[]>([]);
   const [input, setInput] = useState('');
   const [connStatus, setConnStatus] = useState<ConnStatus>('connecting');
@@ -37,12 +44,11 @@ export function TerminalOverlay({
   const inputRef = useRef<HTMLInputElement>(null);
 
   const appendText = useCallback((rawText: string) => {
-    // Strip ANSI escape codes emitted by the PTY, then normalise line endings
     const text = rawText
-      .replace(/\x1b\[[^a-zA-Z]*[a-zA-Z]/g, '') // CSI sequences  (e.g. colours, cursor)
-      .replace(/\x1b[^[]/g, '')                   // other ESC sequences
-      .replace(/\r\n/g, '\n')                      // CRLF → LF
-      .replace(/\r/g, '\n');                       // bare CR → LF
+      .replace(/\x1b\[[^a-zA-Z]*[a-zA-Z]/g, '')
+      .replace(/\x1b[^[]/g, '')
+      .replace(/\r\n/g, '\n')
+      .replace(/\r/g, '\n');
 
     setLines((prev) => {
       const parts = text.split('\n');
@@ -70,18 +76,20 @@ export function TerminalOverlay({
     }
 
     let closed = false;
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     setConnStatus('connecting');
     setLines([]);
     const encodedContainerId = encodeURIComponent(container.id);
     const precheckUrl = `/api/topologies/${backendId}/exec/${encodedContainerId}/precheck`;
-    const wsUrl = `${protocol}//${window.location.host}/api/topologies/ws/${backendId}/exec/${encodedContainerId}`;
+    const wsUrlStr = buildWsUrl(`/api/topologies/ws/${backendId}/exec/${encodedContainerId}`);
 
     appendText(`[diag] precheck URL: ${precheckUrl}\r\n`);
 
     const run = async () => {
       try {
-        const res = await fetch(precheckUrl);
+        const headers: Record<string, string> = {};
+        const token = getAuthToken();
+        if (token) headers['Authorization'] = `Bearer ${token}`;
+        const res = await fetch(precheckUrl, { headers });
         if (closed) return;
         if (!res.ok) {
           setConnStatus('error');
@@ -102,9 +110,9 @@ export function TerminalOverlay({
 
         appendText('[diag] Precheck passed: ok\r\n');
         if (precheck.docker_name) appendText(`[diag] docker name: ${precheck.docker_name}\r\n`);
-        appendText(`[diag] WS URL: ${wsUrl}\r\n`);
+        appendText(`[diag] WS URL: ${wsUrlStr}\r\n`);
 
-        const ws = new WebSocket(wsUrl);
+        const ws = new WebSocket(wsUrlStr);
         wsRef.current = ws;
 
         ws.onopen = () => setConnStatus('connecting');
@@ -143,20 +151,19 @@ export function TerminalOverlay({
   }, [backendId, container.id, deployStatus, appendText]);
 
   useEffect(() => {
-    if (outputRef.current) {
+    if (active && outputRef.current) {
       outputRef.current.scrollTop = outputRef.current.scrollHeight;
     }
-  }, [lines]);
+  }, [lines, active]);
 
   useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+    if (active) inputRef.current?.focus();
+  }, [active]);
 
   const sendInput = useCallback(() => {
     const ws = wsRef.current;
     if (!ws || ws.readyState !== WebSocket.OPEN) return;
     ws.send(input + '\n');
-    // Don't echo locally — the PTY echoes input back through the server
     if (input.trim()) {
       setHistory((prev) => [input, ...prev.slice(0, 99)]);
     }
@@ -194,58 +201,145 @@ export function TerminalOverlay({
   );
 
   const isConnected = connStatus === 'connected';
-  const dockerName = `clab-${topoName || 'ae3gis-topology'}-${container.id}`;
 
   return (
-    <div className="terminal-overlay" onClick={onClose}>
-      <div
-        className="terminal-window"
-        onClick={(e) => e.stopPropagation()}
-        style={{ height: '520px' }}
-      >
-        <div className="terminal-titlebar">
-          <span className="terminal-titlebar-text">
-            <span style={{ color: STATUS_COLOR[connStatus], marginRight: '8px' }}>●</span>
-            {dockerName} — {container.ip}
-          </span>
-          <button className="terminal-titlebar-close" onClick={onClose}>
-            ×
-          </button>
-        </div>
-
-        <div className="terminal-body" style={{ padding: 0, display: 'flex', flexDirection: 'column' }}>
-          <div ref={outputRef} className="terminal-output">
-            {lines.map((line, i) => (
-              <div key={i} className="terminal-line">
-                {line || '\u00a0'}
-              </div>
-            ))}
+    <div
+      className="terminal-body"
+      style={{ display: active ? 'flex' : 'none', padding: 0, flexDirection: 'column' }}
+    >
+      <div ref={outputRef} className="terminal-output">
+        {lines.map((line, i) => (
+          <div key={i} className="terminal-line">
+            {line || '\u00a0'}
           </div>
-
-          <div className="terminal-input-row">
-            <span className="terminal-prompt">{'$ '}</span>
-            <input
-              ref={inputRef}
-              className="terminal-input"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
-              disabled={!isConnected}
-              placeholder={
-                connStatus === 'connecting'
-                  ? 'connecting...'
-                  : connStatus !== 'connected'
-                  ? 'not connected'
-                  : ''
-              }
-              spellCheck={false}
-              autoComplete="off"
-              autoCorrect="off"
-              autoCapitalize="off"
-            />
-          </div>
-        </div>
+        ))}
       </div>
+
+      <div className="terminal-input-row">
+        <span className="terminal-prompt" style={{ color: STATUS_COLOR[connStatus] }}>{'$ '}</span>
+        <input
+          ref={inputRef}
+          className="terminal-input"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+          disabled={!isConnected}
+          placeholder={
+            connStatus === 'connecting'
+              ? 'connecting...'
+              : connStatus !== 'connected'
+              ? 'not connected'
+              : ''
+          }
+          spellCheck={false}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Tab bar + multi-session panel ─────────────────────────────────
+
+export function TerminalOverlay({
+  sessions,
+  activeId,
+  onActivate,
+  onClose,
+  backendId,
+  deployStatus,
+  topoName,
+}: TerminalOverlayProps) {
+  const [minimized, setMinimized] = useState(false);
+  const [height, setHeight] = useState(300);
+  const dragging = useRef(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  const handleTabClick = (id: string) => {
+    if (id === activeId && !minimized) {
+      setMinimized(true);
+    } else {
+      onActivate(id);
+      setMinimized(false);
+    }
+  };
+
+  // Drag-to-resize from the top edge
+  const onDragStart = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    dragging.current = true;
+    const startY = e.clientY;
+    const startH = height;
+
+    const onMove = (ev: MouseEvent) => {
+      if (!dragging.current) return;
+      const delta = startY - ev.clientY;
+      const newH = Math.max(120, Math.min(window.innerHeight * 0.85, startH + delta));
+      setHeight(newH);
+    };
+
+    const onUp = () => {
+      dragging.current = false;
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+      document.body.style.cursor = '';
+      document.body.style.userSelect = '';
+    };
+
+    document.body.style.cursor = 'ns-resize';
+    document.body.style.userSelect = 'none';
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  }, [height]);
+
+  return (
+    <div
+      ref={panelRef}
+      className={`terminal-panel${minimized ? ' terminal-panel--minimized' : ''}`}
+      style={minimized ? undefined : { height }}
+    >
+      {/* Drag handle */}
+      <div className="terminal-resize-handle" onMouseDown={onDragStart} />
+      <div className="terminal-tabbar">
+        <div className="terminal-tabs">
+          {sessions.map((c) => (
+            <div
+              key={c.id}
+              className={`terminal-tab${c.id === activeId && !minimized ? ' terminal-tab--active' : ''}`}
+              onClick={() => handleTabClick(c.id)}
+            >
+              <span className="terminal-tab-label">{c.name}</span>
+              <button
+                className="terminal-tab-close"
+                onClick={(e) => { e.stopPropagation(); onClose(c.id); }}
+                title="Close"
+              >
+                ×
+              </button>
+            </div>
+          ))}
+        </div>
+        <button
+          className="terminal-tabbar-minimize"
+          onClick={() => setMinimized(m => !m)}
+          title={minimized ? 'Restore' : 'Minimize'}
+        >
+          {minimized ? '▲' : '▼'}
+        </button>
+      </div>
+
+      {sessions.map((c) => (
+        <TerminalSession
+          key={c.id}
+          container={c}
+          backendId={backendId}
+          deployStatus={deployStatus}
+          topoName={topoName}
+          active={c.id === activeId && !minimized}
+        />
+      ))}
     </div>
   );
 }
